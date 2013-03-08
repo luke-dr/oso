@@ -5,9 +5,8 @@ feature 'Create Itineraries' do
     visit '/itineraries'
     click_link 'New Itinerary'
     page.should have_content('New Itinerary')
-    fill_in 'Itinerary Name', :with => 'Family Vacation'
-    fill_in 'Airline Code', :with => 'AA'
-    fill_in 'Flight Number', :with => '123'
+    fill_in 'Name', :with => 'Family Vacation'
     click_button 'Create Itinerary'
+    page.should have_content('Itinerary has been created.')
   end
 end
