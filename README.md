@@ -5,7 +5,7 @@ A webapp that makes it easy for you to find an alternate route if your flight or
 
 OSO allows travelers to quickly pull up all possible flights to get them to their final destination. It finds *available flights* across *multiple airlines*.
 
-[![Maptini](OSOmaptini.jpg "Maptini")]
+![Maptini](OSOmaptini.jpg "Maptini")
 
 Features
 --------
