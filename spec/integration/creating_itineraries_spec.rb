@@ -8,5 +8,10 @@ feature 'Create Itineraries' do
     fill_in 'Name', :with => 'Family Vacation'
     click_button 'Create Itinerary'
     page.should have_content('Itinerary has been created.')
+
+    itinerary = Itinerary.find_by_name("Family Vacation")
+    page.current_url.should == itinerary_url(itinerary)
+    title = "Family Vacation - Itineraries - OSO"
+    find("title").should have_content(title)
   end
 end
