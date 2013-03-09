@@ -1,0 +1,13 @@
+<h2>New Traveler</h2>
+
+<%= form_for(@traveler) do |f| %>
+  <%= f.error_messages %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+
+<%= f.submit "Save" %>
+<% end %>

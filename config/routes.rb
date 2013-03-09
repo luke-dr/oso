@@ -1,6 +1,8 @@
 Oso::Application.routes.draw do
   resources :itineraries
   resources :airlines
+  resources :travelers
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

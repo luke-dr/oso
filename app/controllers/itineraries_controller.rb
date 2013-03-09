@@ -14,7 +14,8 @@ class ItinerariesController < ApplicationController
       flash[:notice] = "Itinerary has been created."
       redirect_to @itinerary
     else
-      # nothing, yet
+      flash[:alrt] = "Itinerary has not been created."
+      render :action => "new"
     end
   end
 
