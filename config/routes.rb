@@ -1,6 +1,7 @@
 Oso::Application.routes.draw do
-  resources :itineraries
-  resources :travelers
+  resources :travelers do
+    resources :itineraries
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
