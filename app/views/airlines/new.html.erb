@@ -1,0 +1,31 @@
+<h2>New Airline</h2>
+
+<%= form_for(@airline) do |f| %>
+
+  <p>
+    <%= f.label :name, 'Name' %> <br />
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :icao_code, 'ICAO Code' %> <br />
+    <%= f.text_field :icao_code %>
+  </p>
+
+  <p>
+    <%= f.label :aoc_number, 'AOC Number' %> <br />
+    <%= f.text_field :aoc_number %>
+  </p>
+
+  <p>
+    <%= f.label :url, 'URL' %> <br />
+    <%= f.text_field :url %>
+  </p>
+
+  <p>
+    <%= f.label :phone, 'Phone' %> <br />
+    <%= f.text_field :phone %>
+  </p>
+
+  <%= f.submit %>
+<% end %>
