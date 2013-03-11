@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe Traveler do
+describe Airline do
   pending "add some examples to (or delete) #{__FILE__}"
 end

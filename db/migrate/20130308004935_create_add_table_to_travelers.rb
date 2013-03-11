@@ -1,5 +1,7 @@
 class AddTableToTravelers < ActiveRecord::Migration
   def change
-    add_column :travelers, :flight_id, :integer
+    change_table :travelers do |t|
+      t.integer :flight_id
+    end
   end
 end
