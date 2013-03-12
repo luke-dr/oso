@@ -12,5 +12,11 @@ feature 'Creating Airlines' do
     fill_in 'Phone', :with => '555-555-5555'
     click_button 'Create Airline'
     page.should have_content('Airline has been added')
-  end
+
+    airline = Airline.find_by_name("Virgin America")
+    page.current_url.should == airline_url(airline)
+    title = "Virgin America - Airlines - OSO"
+    find("title").should have_content(title)
+end
+
 end
