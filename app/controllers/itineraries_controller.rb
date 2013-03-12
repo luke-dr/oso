@@ -23,4 +23,20 @@ class ItinerariesController < ApplicationController
     @itinerary = Itinerary.find(params[:id])
   end
 
+  def edit
+    @itinerary = Itinerary.find(params[:id])
+  end
+
+  def update
+    @itinerary = Itinerary.find(params[:id])
+    if @itinerary.update_attributes(params[:itinerary])
+      flash[:notice] = "Itinerary has been updated."
+      redirect_to @itinerary
+    else
+      flash[:alert] = "Itinerary has not been updated."
+      render :action => "edit"
+    end
+
+  end
+
 end
