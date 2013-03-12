@@ -13,7 +13,8 @@ class AirlinesController < ApplicationController
       flash[:notice] = "Airline has been added."
       redirect_to @airline
     else
-      # nothing, yet
+      flash[:alert] = "Airline has not been created."
+      render :action => "new"
     end
   end
 

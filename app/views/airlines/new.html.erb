@@ -1,6 +1,7 @@
 <h2>New Airline</h2>
 
 <%= form_for(@airline) do |f| %>
+<%= f.error_messages %>
 
   <p>
     <%= f.label :name, 'Name' %> <br />
