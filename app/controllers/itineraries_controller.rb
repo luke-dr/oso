@@ -36,7 +36,13 @@ class ItinerariesController < ApplicationController
       flash[:alert] = "Itinerary has not been updated."
       render :action => "edit"
     end
+  end
 
+  def destroy
+    @itinerary = Itinerary.find(params[:id])
+    @itinerary.destroy
+    flash[:notice] = "Itinerary has been deleted."
+    redirect_to itineraries_path
   end
 
 end

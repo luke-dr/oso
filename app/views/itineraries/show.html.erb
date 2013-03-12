@@ -2,3 +2,7 @@
 
 <h2><%= @itinerary.name %></h2>
 <%= link_to "Edit Itinerary", edit_itinerary_path(@itinerary) %>
+<%= link_to "Delete Itinerary",
+            itinerary_path(@itinerary),
+            :method => :delete,
+            :confirm => "Are you sure you want to delete this itinerary?" %>
