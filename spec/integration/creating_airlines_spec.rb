@@ -24,7 +24,7 @@ feature 'Creating Airlines' do
   scenario "can not create an airline without information" do
     click_button 'Create Airline'
     page.should have_content("Airline has not been created.")
-    page.should have_content("Name can't be blank.")
+    page.should have_content("Name can't be blank")
 
   end
 
