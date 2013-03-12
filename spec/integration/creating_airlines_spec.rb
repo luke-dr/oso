@@ -2,7 +2,7 @@ require 'spec_helper'
 
 feature 'Creating Airlines' do
   scenario "can create an airline" do
-    pending "Finishing tests"
+#    pending "Finishing tests"
     visit '/airlines'
     click_link 'New Airline'
     fill_in 'Name', :with => 'Virgin America'
