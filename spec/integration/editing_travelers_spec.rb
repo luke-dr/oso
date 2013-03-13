@@ -20,12 +20,15 @@ feature "Editing Travelers" do
     click_button "Submit"
     page.should have_content("Ethan Allen")
     page.should have_content("ethan@allen.net")
-    page.should have_content("Updated information saved.")
+    page.should have_content("Traveler information saved.")
   end
 
   scenario "can NOT submit with blank fields" do
+    fill_in "First name", :with => nil
+    fill_in "Last name", :with => nil
+    fill_in "Email", :with => nil
     click_button "Submit"
-    page.should have_content("Nothing to submit!")
+    page.should have_content("No changes saved!")
   end
 
   scenario "can NOT change stored email to one already in the DB" do

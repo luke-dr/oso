@@ -29,7 +29,7 @@ class TravelersController < ApplicationController
 
   def update
     if @traveler.update_attributes(params[:traveler])
-      flash[:notice] = "Updated information saved."
+      flash[:notice] = "Traveler information saved."
       redirect_to @traveler
     else
       flash[:alert] = "No changes saved!"
