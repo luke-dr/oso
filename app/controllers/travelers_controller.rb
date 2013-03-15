@@ -1,7 +1,8 @@
 class TravelersController < ApplicationController
   before_filter :find_traveler, :only => [:show,
                                           :edit,
-                                          :update]
+                                          :update,
+                                          :destroy]
   def index
       @travelers = Traveler.all
   end
@@ -37,7 +38,14 @@ class TravelersController < ApplicationController
     end
   end
 
+  def destroy
+    @traveler.destroy
+    flash[:notice] = "Traveler has been deleted."
+    redirect_to travelers_path
+  end
+
   private
+
   def find_traveler
     @traveler = Traveler.find(params[:id])
   end
