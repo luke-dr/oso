@@ -23,4 +23,18 @@ class AirlinesController < ApplicationController
     @airline = Airline.find(params[:id])
   end
 
+  def edit
+    @airline = Airline.find(params[:id])
+  end
+
+  def update
+    @airline = Airline.find(params[:id])
+    if @airline.update_attributes(params[:airline])
+      flash[:notice] = "Airline has been updated."
+      redirect_to @airline
+    else
+      flash[:alert] = "Airline has not been updated."
+      render :action => "edit"
+    end
+  end
 end
