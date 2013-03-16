@@ -37,4 +37,12 @@ class AirlinesController < ApplicationController
       render :action => "edit"
     end
   end
+
+  def destroy
+    @airline = Airline.find(params[:id])
+    @airline.destroy
+    flash[:notice] = "Airline has been deleted."
+    redirect_to airlines_path
+  end
+
 end
