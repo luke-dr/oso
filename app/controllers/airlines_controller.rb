@@ -1,4 +1,8 @@
 class AirlinesController < ApplicationController
+  before_filter :find_airline, :only => [:show,
+      :edit,
+      :update,
+      :destroy]
 
   def index
     @airlines = Airline.all
@@ -20,15 +24,12 @@ class AirlinesController < ApplicationController
   end
 
   def show
-    @airline = Airline.find(params[:id])
   end
 
   def edit
-    @airline = Airline.find(params[:id])
   end
 
   def update
-    @airline = Airline.find(params[:id])
     if @airline.update_attributes(params[:airline])
       flash[:notice] = "Airline has been updated."
       redirect_to @airline
@@ -39,9 +40,16 @@ class AirlinesController < ApplicationController
   end
 
   def destroy
-    @airline = Airline.find(params[:id])
     @airline.destroy
     flash[:notice] = "Airline has been deleted."
+    redirect_to airlines_path
+  end
+
+private
+  def find_airline
+    @airline = Airline.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+    flash[:alert] = "The airline you were looking for could not be found."
     redirect_to airlines_path
   end
 
