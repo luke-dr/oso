@@ -1,5 +1,5 @@
 class TravelersController < ApplicationController
-  before_filter :find_traveler, :only => [:show,
+  before_filter :find_traveler, :only => [#:show,
                                           :edit,
                                           :update,
                                           :destroy]
@@ -23,6 +23,7 @@ class TravelersController < ApplicationController
   end
 
   def show
+    @traveler = Traveler.find(current_user)
   end
 
   def edit

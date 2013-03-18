@@ -3,7 +3,7 @@ FactoryGirl.define do
     "traveler#{n}@email.com"
   end
 
-  factory :traveler do
+  factory :user do
     first_name "Mike"
     last_name "Traveler"
     email

@@ -1,4 +1,8 @@
 Oso::Application.routes.draw do
+  devise_for :users
+
+  root to: "travelers#show"
+
   resources :itineraries
   resources :airlines
   resources :travelers
