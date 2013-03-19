@@ -9,6 +9,7 @@ gem "devise", "~> 2.2.3"
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'database_cleaner'
 
 
 # Gems used only for assets and not required
@@ -51,4 +52,5 @@ end
 group :test do
   gem 'capybara', '1.1.2'
   gem 'factory_girl', '2.6.4'
+  gem 'simplecov', :require => false
 end

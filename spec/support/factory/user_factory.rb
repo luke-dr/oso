@@ -7,5 +7,6 @@ FactoryGirl.define do
     first_name "Mike"
     last_name "Traveler"
     email
+    password "password"
   end
 end

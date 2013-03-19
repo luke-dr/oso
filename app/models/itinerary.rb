@@ -1,7 +1,6 @@
 class Itinerary < ActiveRecord::Base
-  attr_accessible :name, :Flights
-  has_many :Travelers
-  has_many :Flights
-	
+  attr_accessible :name
+  has_many :travelers
+
 	validates :name, :presence => true
 end

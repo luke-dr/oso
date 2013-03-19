@@ -1,11 +1,12 @@
 Oso::Application.routes.draw do
+  root to: "users#show"
+
+
+
   devise_for :users
-
-  root to: "travelers#show"
-
   resources :itineraries
   resources :airlines
-  resources :travelers
+  resources :users
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
