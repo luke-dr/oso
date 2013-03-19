@@ -1,9 +1,0 @@
-<%= link_to "Create Traveler Profile", new_traveler_path %> <br />
-<br />
-<h2>Travelers</h2>
-  <ul>
-    <% @travelers.each do |traveler| %>
-      <li><%= link_to "#{traveler.last_name}, #{traveler.first_name}", traveler %></li>
-      <li><%= traveler.email %></li><br />
-    <% end %>
-  </ul>
