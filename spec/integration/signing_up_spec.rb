@@ -1,7 +1,8 @@
 require 'spec_helper'
 
 feature "Signing up" do
-  let(:user) { Factory(:user) }
+  let(:user) { Factory.build(:user) }
+
   scenario "Successful signup" do
     visit '/'
     click_link "Sign up"

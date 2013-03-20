@@ -1,7 +1,8 @@
 require 'spec_helper'
 
 feature "Viewing Travelers" do
-user = Factory.create(:user)
+  #TODO create and sign in as an admin user
+  let(:user) { Factory.create(:user) }
 
   scenario "can show all user information" do
     visit '/users'
