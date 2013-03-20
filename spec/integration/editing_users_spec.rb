@@ -3,13 +3,16 @@ require 'spec_helper'
 #this is an admin feature
 
 feature "Editing users" do
-  user = Factory.create(:user,
-            first_name: "Sarah",
-            last_name: "Connor",
-            email: "sarah@connor.co.uk")
-  Factory.create(:user, :email => "gary@busey.net")
+  let(:user) do
+    Factory.create(:user,
+      first_name: "Sarah",
+      last_name: "Connor",
+      email: "sarah@connor.co.uk")
+  end
+  let!(:gary) { Factory.create(:user, :email => "gary@busey.net") }
 
   before do
+    sign_in_as!(user)
     visit '/users'
     click_link "Connor, Sarah"
     click_link "Edit Profile"
