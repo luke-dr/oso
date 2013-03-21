@@ -1,5 +1,7 @@
 class TravelersController < ApplicationController
-
+  before_filter :find_traveler, :only => [:show,
+                                          :edit,
+                                          :update]
   def index
       @travelers = Traveler.all
   end
@@ -20,6 +22,24 @@ class TravelersController < ApplicationController
   end
 
   def show
+  end
+
+  def edit
+  end
+
+  def update
+    if @traveler.update_attributes(params[:traveler])
+      flash[:notice] = "Traveler information saved."
+      redirect_to @traveler
+    else
+      flash[:alert] = "No changes saved!"
+      render :action => :edit
+    end
+  end
+
+  private
+  def find_traveler
     @traveler = Traveler.find(params[:id])
   end
+
 end

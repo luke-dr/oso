@@ -3,7 +3,7 @@
 <h2>Travelers</h2>
   <ul>
     <% @travelers.each do |traveler| %>
-      <li><%= link_to traveler.name, traveler %></li>
-      <li><%= mail_to traveler.email %></li><br />
+      <li><%= link_to "#{traveler.last_name}, #{traveler.first_name}", traveler %></li>
+      <li><%= traveler.email %></li><br />
     <% end %>
   </ul>
