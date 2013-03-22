@@ -10,6 +10,7 @@ class ItinerariesController < ApplicationController
 
   def new
     @itinerary = Itinerary.new
+    @flight = @itinerary.flights.build
   end
 
   def create
