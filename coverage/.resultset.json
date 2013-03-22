@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/jayml/rails/oso/app/models/user.rb": [
+      "/Users/ivan/Development/oso/app/models/user.rb": [
         1,
         null,
         null,
@@ -20,12 +20,12 @@
         null,
         null
       ],
-      "/home/jayml/rails/oso/app/controllers/application_controller.rb": [
+      "/Users/ivan/Development/oso/app/controllers/application_controller.rb": [
         1,
         1,
         null
       ],
-      "/home/jayml/rails/oso/app/helpers/application_helper.rb": [
+      "/Users/ivan/Development/oso/app/helpers/application_helper.rb": [
         1,
         1,
         7,
@@ -36,19 +36,19 @@
         null,
         null
       ],
-      "/home/jayml/rails/oso/app/helpers/airlines_helper.rb": [
+      "/Users/ivan/Development/oso/app/helpers/airlines_helper.rb": [
         1,
         null
       ],
-      "/home/jayml/rails/oso/app/helpers/itineraries_helper.rb": [
+      "/Users/ivan/Development/oso/app/helpers/itineraries_helper.rb": [
         1,
         null
       ],
-      "/home/jayml/rails/oso/app/helpers/users_helper.rb": [
+      "/Users/ivan/Development/oso/app/helpers/users_helper.rb": [
         1,
         null
       ],
-      "/home/jayml/rails/oso/app/controllers/airlines_controller.rb": [
+      "/Users/ivan/Development/oso/app/controllers/airlines_controller.rb": [
         1,
         null,
         1,
@@ -75,7 +75,7 @@
         null,
         null
       ],
-      "/home/jayml/rails/oso/app/models/airline.rb": [
+      "/Users/ivan/Development/oso/app/models/airline.rb": [
         1,
         null,
         1,
@@ -83,7 +83,7 @@
         null,
         null
       ],
-      "/home/jayml/rails/oso/app/controllers/itineraries_controller.rb": [
+      "/Users/ivan/Development/oso/app/controllers/itineraries_controller.rb": [
         1,
         1,
         null,
@@ -144,7 +144,7 @@
         null,
         null
       ],
-      "/home/jayml/rails/oso/app/models/itinerary.rb": [
+      "/Users/ivan/Development/oso/app/models/itinerary.rb": [
         1,
         1,
         1,
@@ -152,7 +152,7 @@
         1,
         null
       ],
-      "/home/jayml/rails/oso/app/controllers/users_controller.rb": [
+      "/Users/ivan/Development/oso/app/controllers/users_controller.rb": [
         1,
         1,
         null,
@@ -183,19 +183,19 @@
         null,
         null,
         1,
+        9,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
         2,
-        null,
-        null,
+        1,
         1,
         null,
-        null,
         1,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
+        1,
         null,
         null,
         null,
@@ -208,12 +208,12 @@
         1,
         null,
         1,
-        0,
+        5,
         null,
         null,
         null
       ]
     },
-    "timestamp": 1363715534
+    "timestamp": 1363806087
   }
 }
