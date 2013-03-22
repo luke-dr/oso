@@ -54,3 +54,6 @@ group :test do
   gem 'factory_girl', '2.6.4'
   gem 'simplecov', :require => false
 end
+
+gem 'metainspector'
+
