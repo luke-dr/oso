@@ -8,7 +8,7 @@ feature "Editing Itineraries - " do
   end
 
   before do
-    visit '/itineraries'
+    visit '/'
     click_link itinerary.name
     click_link "Edit Itinerary"
   end

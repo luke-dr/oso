@@ -2,7 +2,7 @@ require 'spec_helper'
 
 feature 'Create Itineraries - ' do
   before do
-    visit '/itineraries'
+    visit '/'
     click_link 'New Itinerary'
     page.should have_content('New Itinerary')
   end
