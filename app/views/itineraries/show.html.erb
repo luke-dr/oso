@@ -6,3 +6,12 @@
             itinerary_path(@itinerary),
             :method => :delete,
             :confirm => "Are you sure you want to delete this itinerary?" %>
+<ul class="flights">
+  <% @itinerary.flights.each do |flight| %>
+    <li class="airline_code"><%= flight.airline_code %></li>
+    <li class="flight_number"><%= flight.flight_number %></li>
+    <li class="scheduled_departure_time"><%= flight.scheduled_departure_time %></li>
+    <li class="departure_airport"><%= flight.departure_airport %></li>
+    <li class="arrival_airport"><%= flight.arrival_airport %></li>
+  <% end %>
+</ul>

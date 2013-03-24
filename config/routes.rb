@@ -1,6 +1,5 @@
 Oso::Application.routes.draw do
   resources :itineraries
-  resources :flights
   resources :airlines
   resources :travelers
 

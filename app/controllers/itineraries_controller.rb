@@ -1,8 +1,5 @@
 class ItinerariesController < ApplicationController
-  before_filter :find_itinerary, :only => [:show,
-                                          :edit,
-                                          :update,
-                                          :destroy ]
+  before_filter :find_itinerary, :only => [:show, :edit, :update, :destroy]
 
   def index
     @itineraries = Itinerary.all
@@ -10,7 +7,7 @@ class ItinerariesController < ApplicationController
 
   def new
     @itinerary = Itinerary.new
-    @flight = @itinerary.flights.build
+    @flight = @itinerary.flights.new
   end
 
   def create
@@ -19,21 +16,19 @@ class ItinerariesController < ApplicationController
       flash[:notice] = "Itinerary has been created."
       redirect_to @itinerary
     else
-      flash[:alrt] = "Itinerary has not been created."
+      @flight = Flight.new(params[:flight])
+      flash[:alert] = "Itinerary has not been created."
       render :action => "new"
     end
   end
 
   def show
-
   end
 
   def edit
-
   end
 
   def update
-
     if @itinerary.update_attributes(params[:itinerary])
       flash[:notice] = "Itinerary has been updated."
       redirect_to @itinerary
