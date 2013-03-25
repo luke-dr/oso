@@ -1,7 +1,7 @@
 
 
 <h2>Itineraries</h2>
-<% if @user != current_user %>
+<% if !user_signed_in? %>
   <h3>Get started now! <%= link_to "Create an itinerary", new_itinerary_path %></h3>
 <% end %>
 
@@ -12,6 +12,3 @@
     <% end %>
   </ul>
 <% end %>
-
-<!---- make sure users can only see their own itinerary! -->
-<!--- no auth - redirect to itinerary create --->

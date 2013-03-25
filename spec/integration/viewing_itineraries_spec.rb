@@ -13,9 +13,10 @@ feature "Viewing itineraries" do
   end
 
   scenario "Listing all itineraries" do
-    page.should have_content("Family Vacation")
+    page.should have_content(itinerary_1.name)
+    page.should have_content(itinerary_2.name)
     page.should_not have_content("Not your trip")
-    click_link itinerary.name
+    click_link itinerary_2.name
     page.current_url.should == itinerary_url(itinerary_2)
   end
 end
