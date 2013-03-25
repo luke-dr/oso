@@ -3,10 +3,9 @@
 <h2>Itineraries</h2>
 <% if !user_signed_in? %>
   <h3>Get started now! <%= link_to "Create an itinerary", new_itinerary_path %></h3>
-<% end %>
-
-<% if @user == current_user %>
+<% else %>
   <ul>
+    <%= link_to "Create an itinerary", new_itinerary_path %>
     <% @itineraries.each do |itinerary| %>
       <li><%= link_to itinerary.name, itinerary %></li>
     <% end %>

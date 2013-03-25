@@ -1,8 +1,11 @@
 require 'spec_helper'
 
 feature 'Create Itineraries - ' do
+  let!(:user) { Factory(:user_confirmed) }
+
   before do
     visit '/'
+    sign_in_as!(user)
     click_link 'Create an itinerary'
     page.should have_content('New Itinerary')
   end
