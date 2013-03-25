@@ -1,10 +1,33 @@
-<%= form_for(@itinerary) do |f| %><br />
+  <%= form_for @itinerary do |f| %><br />
   <%= f.error_messages %>
   <p>
     <%= f.label :name %>
     <%= f.text_field :name %>
-  </p>
+  </p><br>
+<h2>Flight</h2>
+  <%= f.fields_for :flights do |flight| %>
+    <p>
+      <%= flight.label :airline_code %>
+      <%= flight.text_field :airline_code %>
+    </p>
+    <p>
+      <%= flight.label :flight_number %>
+      <%= flight.text_field :flight_number %>
+    </p>
+    <p>
+      <%= flight.label :scheduled_departure_time, "Flight date" %>
+      <%= flight.text_field :scheduled_departure_time %>
+    </p>
+    <p>
+      <%= flight.label :departure_airport %>
+      <%= flight.text_field :departure_airport %>
+    </p>
+    <p>
+      <%= flight.label :arrival_airport %>
+      <%= flight.text_field :arrival_airport %>
+    </p>
+  <% end %>
   <p>
-    <%= f.submit %>
+    <%= f.submit 'Save Itinerary'%>
   </p>
 <% end %>

@@ -14,4 +14,5 @@ feature "Deleting itineraries" do
     page.should_not have_content("Family Vacation")
     page.should have_content(itinerary_other.name)
   end
+
 end

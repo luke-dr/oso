@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :itinerary do
-    name "Example itinerary"
+    sequence(:name)  { |i| "Example Itinerary_#{i}" }
     user
   end
 end

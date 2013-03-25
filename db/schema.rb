@@ -23,6 +23,22 @@ ActiveRecord::Schema.define(:version => 20130324202023) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "flights", :force => true do |t|
+    t.string   "airline_code"
+    t.integer  "flight_number"
+    t.string   "departure_airport"
+    t.string   "arrival_airport"
+    t.datetime "scheduled_departure_time"
+    t.datetime "scheduled_arrival_time"
+    t.string   "status"
+    t.datetime "actual_departure_time"
+    t.integer  "itinerary_id"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+  end
+
+  add_index "flights", ["itinerary_id"], :name => "index_flights_on_itinerary_id"
+
   create_table "itineraries", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
@@ -51,9 +67,5 @@ ActiveRecord::Schema.define(:version => 20130324202023) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
   end
-
-  add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
-  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
-  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end
