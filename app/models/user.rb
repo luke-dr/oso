@@ -3,15 +3,14 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name
-  # attr_accessible :title, :body
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :unconfirmed_email
 
   has_many :itineraries
 
   validates :email, :presence => true,
-            :allow_blank => false,
             :uniqueness => true
+  validates_confirmation_of :password, :message => "Your password doesn't match!"
 end

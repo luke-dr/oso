@@ -1,12 +1,15 @@
 require 'spec_helper'
 
 feature 'Creating Airlines' do
+  let!(:admin) { Factory(:admin_user) }
   before do
-    visit '/airlines'
+    sign_in_as!(admin)
+    visit '/admin'
+    click_link 'Manage Airlines'
     click_link 'New Airline'
   end
 
-  scenario "can create an airline" do
+  scenario "admin can create an airline" do
     fill_in 'Name', :with => 'Virgin America'
     fill_in 'airline_icao_code', :with => 'VRD'
     fill_in 'AOC Number', :with => 'VQIA199L'
@@ -16,7 +19,7 @@ feature 'Creating Airlines' do
     page.should have_content('Airline has been added')
 
     airline = Airline.find_by_name("Virgin America")
-    page.current_url.should == airline_url(airline)
+    page.current_url.should == admin_airline_url(airline)
     title = "Virgin America - Airlines - OSO"
     find("title").should have_content(title)
   end
@@ -25,7 +28,5 @@ feature 'Creating Airlines' do
     click_button 'Create Airline'
     page.should have_content("Airline has not been created.")
     page.should have_content("Name can't be blank")
-
   end
-
 end

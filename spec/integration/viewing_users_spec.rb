@@ -1,13 +1,14 @@
 require 'spec_helper'
 
-feature "Viewing Travelers" do
-  #TODO create and sign in as an admin user
-  let(:user) { Factory.create(:user) }
+feature "Viewing User Profile" do
+  let!(:user) { Factory(:user_confirmed) }
 
-  scenario "can show all user information" do
-    visit '/users'
-    click_link "Traveler, Mike"
-    page.should have_content("Mike Traveler")
+  scenario "can show user their profile" do
+    sign_in_as!(user)
+    visit '/'
+    click_link "Account"
+    page.should have_content(user.name)
     page.should have_content(user.email)
+    page.should have_content("Delete Account")
   end
 end

@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 feature "Signing in" do
-  let(:user) { Factory(:user) }
+  let!(:user) { Factory(:user_confirmed) }
 
   scenario 'Signing in via form' do
     User.find_by_email(user.email)

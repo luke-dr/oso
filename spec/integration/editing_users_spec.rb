@@ -1,45 +1,45 @@
 require 'spec_helper'
 
-#this is an admin feature
-
 feature "Editing users" do
-  let(:user) do
-    Factory.create(:user,
-      first_name: "Sarah",
-      last_name: "Connor",
+  let!(:user) do
+    Factory(:user_confirmed,
+      name: "Sarah Connor",
       email: "sarah@connor.co.uk")
   end
-  let!(:gary) { Factory.create(:user, :email => "gary@busey.net") }
+  let!(:gary) { Factory(:user, :email => "gary@busey.net") }
 
   before do
     sign_in_as!(user)
-    visit '/users'
-    click_link "Connor, Sarah"
-    click_link "Edit Profile"
+    visit "/"
+    click_link "Account"
   end
 
-  scenario "can change stored email and password" do
-    fill_in "First name", with: "Ethan"
-    fill_in "Last name", with: "Allen"
+  scenario "user can change their name, email, and password" do
+    click_link "Edit Contact Information"
+    fill_in "Name", with: "Ethan Allen"
     fill_in "Email", with: "ethan@allen.net"
-    fill_in "Password", with: user.password
+
     click_button "Submit"
+
     page.should have_content("Ethan Allen")
     page.should have_content("ethan@allen.net")
-    page.should have_content("User information saved.")
+    page.should have_content("Your contact information has been updated!")
+    page.should have_content("Make sure to confirm your new email!")
   end
 
-  scenario "can NOT submit with blank fields" do
-    fill_in "First name", with: nil
-    fill_in "Last name", with: nil
+  scenario "can NOT submit blank email, blank name okay" do
+    click_link "Edit Contact Information"
+    fill_in "Name", with: nil
     fill_in "Email", with: nil
     click_button "Submit"
     page.should have_content("No changes saved!")
   end
 
   scenario "can NOT change stored email to one already in the DB" do
+    click_link "Edit Contact Information"
     fill_in "Email", with: "gary@busey.net"
-
   end
 
+#  scenario "user can change their password" do
+#  end
 end

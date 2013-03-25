@@ -1,6 +1,6 @@
 class Itinerary < ActiveRecord::Base
   attr_accessible :name
-  has_many :travelers
+  belongs_to :user
 
 	validates :name, :presence => true
 end

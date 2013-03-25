@@ -1,9 +1,12 @@
 require 'spec_helper'
 
 feature "Editing Itineraries" do
+  let!(:user) { Factory(:user_confirmed) }
+  let!(:itinerary) { Factory(:itinerary, :name => "Family Vacation", :user => user) }
+
   before do
-    Factory(:itinerary, :name => "Family Vacation")
-    visit '/itineraries'
+    sign_in_as!(user)
+    visit '/'
     click_link "Family Vacation"
     click_link "Edit Itinerary"
   end
@@ -19,5 +22,4 @@ feature "Editing Itineraries" do
     click_button "Update Itinerary"
     page.should have_content("Itinerary has not been updated.")
   end
-
 end

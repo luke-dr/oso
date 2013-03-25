@@ -1,8 +1,17 @@
-<%= link_to "New Itinerary", new_itinerary_path %>
+
 
 <h2>Itineraries</h2>
-<ul>
-  <% @itineraries.each do |itinerary| %>
-    <li><%= link_to itinerary.name, itinerary %></li>
-  <% end %>
-</ul>
+<% if @user != current_user %>
+  <h3>Get started now! <%= link_to "Create an itinerary", new_itinerary_path %></h3>
+<% end %>
+
+<% if @user == current_user %>
+  <ul>
+    <% @itineraries.each do |itinerary| %>
+      <li><%= link_to itinerary.name, itinerary %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<!---- make sure users can only see their own itinerary! -->
+<!--- no auth - redirect to itinerary create --->

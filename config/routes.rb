@@ -1,9 +1,13 @@
 Oso::Application.routes.draw do
-  root to: "users#show"
+  root to: "itineraries#index"
 
-
+  namespace :admin do
+    root to: "base#index"
+    resources :users, :airlines
+  end
 
   devise_for :users
+
   resources :itineraries
   resources :airlines
   resources :users

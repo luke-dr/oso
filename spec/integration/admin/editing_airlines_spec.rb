@@ -1,9 +1,13 @@
 require 'spec_helper'
 
 feature "Editing Airlines" do
+  let!(:airline) { Factory(:airline, :name => "Virgin America") }
+  let!(:admin) { Factory(:admin_user) }
+
   before do
-    Factory(:airline, :name => "Virgin America")
-    visit "/airlines"
+    sign_in_as!(admin)
+    visit "/admin"
+    click_link "Manage Airlines"
     click_link "Virgin America"
     click_link "Edit Airline"
   end

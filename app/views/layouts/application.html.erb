@@ -14,15 +14,20 @@
 </head>
 <body>
 
+<nav>
+  <% if user_signed_in? %>
+    <div><%= link_to "Account", @user %> | <%= link_to "Sign out", destroy_user_session_path, :method => :delete %></div>
+  <% else %></%>
+    Welcome!<br>
+    <%= link_to "Sign up", new_user_registration_path %> | <%= link_to "Sign in", new_user_session_path %>
+  <% end %>
+</nav>
+
 <% flash.each do |key, value| %>
   <div class='flash' id='<%= key %>'>
     <%= value %>
   </div>
 <% end %>
-
-<nav>
-  <%= link_to "Sign up", new_user_registration_path %> | <%= link_to "Sign in", new_user_session_path %>
-</nav>
 
 <%= yield %>
 

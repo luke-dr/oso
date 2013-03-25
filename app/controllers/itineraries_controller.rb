@@ -5,7 +5,12 @@ class ItinerariesController < ApplicationController
                                           :destroy ]
 
   def index
-    @itineraries = Itinerary.all
+    if current_user
+      @user = current_user
+      @itineraries = @user.itineraries
+    else
+      @user = User.new
+    end
   end
 
   def new
@@ -18,13 +23,12 @@ class ItinerariesController < ApplicationController
       flash[:notice] = "Itinerary has been created."
       redirect_to @itinerary
     else
-      flash[:alrt] = "Itinerary has not been created."
+      flash[:alert] = "Itinerary has not been created."
       render :action => "new"
     end
   end
 
   def show
-
   end
 
   def edit

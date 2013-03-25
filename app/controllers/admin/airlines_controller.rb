@@ -1,8 +1,5 @@
-class AirlinesController < ApplicationController
-  before_filter :find_airline, :only => [:show,
-      :edit,
-      :update,
-      :destroy]
+class Admin::AirlinesController < Admin::BaseController
+  before_filter :find_airline, :only => [:show, :edit, :update, :destroy]
 
   def index
     @airlines = Airline.all
@@ -16,7 +13,7 @@ class AirlinesController < ApplicationController
     @airline = Airline.new(params[:airline])
     if @airline.save
       flash[:notice] = "Airline has been added."
-      redirect_to @airline
+      redirect_to [:admin, @airline]
     else
       flash[:alert] = "Airline has not been created."
       render :action => "new"
@@ -32,7 +29,7 @@ class AirlinesController < ApplicationController
   def update
     if @airline.update_attributes(params[:airline])
       flash[:notice] = "Airline has been updated."
-      redirect_to @airline
+      redirect_to [:admin, @airline]
     else
       flash[:alert] = "Airline has not been updated."
       render :action => "edit"
@@ -42,7 +39,7 @@ class AirlinesController < ApplicationController
   def destroy
     @airline.destroy
     flash[:notice] = "Airline has been deleted."
-    redirect_to airlines_path
+    redirect_to admin_airlines_path
   end
 
 private
@@ -50,7 +47,7 @@ private
     @airline = Airline.find(params[:id])
     rescue ActiveRecord::RecordNotFound
     flash[:alert] = "The airline you were looking for could not be found."
-    redirect_to airlines_path
+    redirect_to admin_airlines_path
   end
 
 end
