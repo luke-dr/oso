@@ -1,8 +1,13 @@
-<%= link_to "New Itinerary", new_itinerary_path %>
+
 
 <h2>Itineraries</h2>
-<ul>
-  <% @itineraries.each do |itinerary| %>
-    <li><%= link_to itinerary.name, itinerary %></li>
-  <% end %>
-</ul>
+<% if !user_signed_in? %>
+  <h3>Get started now! <%= link_to "Create an itinerary", new_itinerary_path %></h3>
+<% else %>
+  <ul>
+    <%= link_to "Create an itinerary", new_itinerary_path %>
+    <% @itineraries.each do |itinerary| %>
+      <li><%= link_to itinerary.name, itinerary %></li>
+    <% end %>
+  </ul>
+<% end %>
