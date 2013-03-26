@@ -31,11 +31,14 @@
 
   <%= render 'layouts/header' %>
 
-  <div class='container main'>
+  <div class='container'>
+    <div class='row'>
+      <div class='span12 main'
 
-  <%= render 'layouts/messages' %>
+        <%= render 'layouts/messages' %>
+        <%= yield %>
 
-<%= yield %>
+      </div>
 
 </div>
 </body>
