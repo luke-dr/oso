@@ -59,4 +59,5 @@ end
 
 gem "nokogiri", "~> 1.5.9"
 gem "sanitize"
+gem "mechanize", "~> 2.6.0"
 
