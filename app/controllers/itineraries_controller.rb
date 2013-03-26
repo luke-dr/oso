@@ -47,7 +47,6 @@ class ItinerariesController < ApplicationController
   end
 
   def update
-
     if @itinerary.update_attributes(params[:itinerary])
       flash[:notice] = "Itinerary has been updated."
       redirect_to @itinerary

@@ -3,9 +3,12 @@ require 'nokogiri'
 require 'open-uri'
 
 feature "Check flight status" do
+  let!(:user) { Factory(:user_confirmed) }
+
   before do
     visit '/'
-    click_link 'New Itinerary'
+    sign_in_as!(user)
+    click_link 'Create an itinerary'
     page.should have_content('New Itinerary')
   end
 
@@ -20,7 +23,6 @@ feature "Check flight status" do
     page.should have_content("Jayml's family vacation")
     page.should have_content("AA")
     page.should have_content("5")
-    click_button "Check Flight Status"
   end
 
 end

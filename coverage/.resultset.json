@@ -1,12 +1,78 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/richtx214/Projects/oso/app/controllers/airlines_controller.rb": [
+      "/Users/richtx214/Projects/oso/app/models/user.rb": [
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null
+      ],
+      "/Users/richtx214/Projects/oso/app/controllers/application_controller.rb": [
         1,
         1,
         null,
+        1,
+        null,
+        1,
+        54,
+        52,
+        0,
+        0,
         null,
         null,
+        null
+      ],
+      "/Users/richtx214/Projects/oso/app/helpers/application_helper.rb": [
+        1,
+        1,
+        14,
+        14,
+        14,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/richtx214/Projects/oso/app/helpers/admin/base_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/richtx214/Projects/oso/app/helpers/admin/users_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/richtx214/Projects/oso/app/helpers/airlines_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/richtx214/Projects/oso/app/helpers/flights_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/richtx214/Projects/oso/app/helpers/itineraries_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/richtx214/Projects/oso/app/helpers/users_helper.rb": [
+        1,
+        null,
+        null
+      ],
+      "/Users/richtx214/Projects/oso/app/controllers/admin/airlines_controller.rb": [
+        1,
+        1,
         null,
         1,
         8,
@@ -59,36 +125,13 @@
         null,
         null
       ],
-      "/Users/richtx214/Projects/oso/app/controllers/application_controller.rb": [
+      "/Users/richtx214/Projects/oso/app/controllers/admin/base_controller.rb": [
         1,
         1,
-        null
-      ],
-      "/Users/richtx214/Projects/oso/app/helpers/application_helper.rb": [
+        null,
         1,
-        1,
-        14,
-        14,
-        14,
         null,
         null,
-        null,
-        null
-      ],
-      "/Users/richtx214/Projects/oso/app/helpers/airlines_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/richtx214/Projects/oso/app/helpers/flights_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/richtx214/Projects/oso/app/helpers/itineraries_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/richtx214/Projects/oso/app/helpers/travelers_helper.rb": [
-        1,
         null
       ],
       "/Users/richtx214/Projects/oso/app/models/airline.rb": [
@@ -99,12 +142,56 @@
         null,
         null
       ],
+      "/Users/richtx214/Projects/oso/app/controllers/admin/users_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        8,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        2,
+        2,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        3,
+        null,
+        null
+      ],
       "/Users/richtx214/Projects/oso/app/controllers/itineraries_controller.rb": [
         1,
         1,
         null,
         1,
-        10,
+        39,
+        32,
+        32,
+        null,
+        7,
+        null,
         null,
         null,
         1,
@@ -142,6 +229,7 @@
         1,
         null,
         null,
+        null,
         1,
         2,
         1,
@@ -173,39 +261,41 @@
         1,
         1,
         1,
+        null,
+        1,
+        null,
         1,
         null,
         1,
         null
       ],
-      "/Users/richtx214/Projects/oso/app/controllers/travelers_controller.rb": [
+      "/Users/richtx214/Projects/oso/app/controllers/users_controller.rb": [
+        1,
         1,
         1,
         null,
         null,
-        1,
-        3,
-        null,
-        null,
-        1,
-        0,
         null,
         null,
         1,
         0,
-        0,
-        0,
-        0,
         null,
-        0,
-        0,
         null,
+        1,
+        5,
         null,
         null,
         1,
         null,
         null,
         1,
+        2,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
         null,
         null,
         1,
@@ -213,28 +303,11 @@
         0,
         0,
         null,
-        0,
-        0,
-        null,
-        null,
-        null,
-        1,
-        1,
-        0,
-        null,
-        null,
-        null
-      ],
-      "/Users/richtx214/Projects/oso/app/models/traveler.rb": [
-        1,
-        1,
-        1,
-        1,
         null,
         1,
         null,
-        null,
         1,
+        5,
         null,
         null,
         null
@@ -249,6 +322,6 @@
         null
       ]
     },
-    "timestamp": 1364257863
+    "timestamp": 1364277344
   }
 }
