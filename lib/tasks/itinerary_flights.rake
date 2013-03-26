@@ -9,7 +9,7 @@ desc "Fetch flight list"
       doc = Nokogiri::HTML(open(url))
       puts url
 #      puts doc.css('.sfArr , .sfDep, .scheduledAirlineLogo')
-      puts doc.
+#      puts doc.
 #      doc = Nokogiri::HTML(open(url))
 #      puts Sanitize.clean(doc.css('.statusBlock .statusType').to_s).strip
 
