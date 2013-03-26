@@ -57,5 +57,6 @@ group :test do
   gem 'simplecov', :require => false
 end
 
-gem 'metainspector'
+gem "nokogiri", "~> 1.5.9"
+gem "sanitize"
 
