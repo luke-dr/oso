@@ -1,13 +1,16 @@
 require 'spec_helper'
 
 feature "Editing Itineraries - " do
-  let!(:itinerary) { Factory(:itinerary) }
+  let!(:user) { Factory(:user_confirmed) }
+  let!(:itinerary) { Factory(:itinerary, :user => user) }
   let!(:flight) do
     flight = Factory(:flight, :itinerary => itinerary)
     flight
   end
 
+
   before do
+    sign_in_as!(user)
     visit '/'
     click_link itinerary.name
     click_link "Edit Itinerary"
