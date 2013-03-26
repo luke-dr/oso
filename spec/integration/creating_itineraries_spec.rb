@@ -1,9 +1,12 @@
 require 'spec_helper'
 
 feature 'Create Itineraries - ' do
+  let!(:user) { Factory(:user_confirmed) }
+
   before do
     visit '/'
-    click_link 'New Itinerary'
+    sign_in_as!(user)
+    click_link 'Create an itinerary'
     page.should have_content('New Itinerary')
   end
 
@@ -18,7 +21,7 @@ feature 'Create Itineraries - ' do
     find("title").should have_content(title)
   end
 
-  scenario "Can NOT create an itinerary wtih no name" do
+  scenario "Can NOT create an itinerary with no name" do
     click_button 'Save Itinerary'
     page.should have_content("Itinerary has not been created.")
     page.should have_content("Name can't be blank")
@@ -36,5 +39,4 @@ feature 'Create Itineraries - ' do
     page.should have_content("AA")
     page.should have_content("5")
   end
-
 end

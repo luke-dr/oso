@@ -1,11 +1,28 @@
 FactoryGirl.define do
-  sequence :email do |n|
-    "traveler#{n}@email.com"
+  sequence :email do |u|
+    "traveler#{u}@email.com"
   end
 
-  factory :traveler do
-    first_name "Mike"
-    last_name "Traveler"
+  sequence :name do |n|
+    "Traveler_#{n}"
+  end
+
+  factory :user do
+    name
     email
+    password "password"
+
+    factory :admin_user do
+      admin true
+      after_create do |user|
+        user.confirm!
+      end
+    end
+
+    factory :user_confirmed do
+      after_create do |user|
+        user.confirm!
+      end
+    end
   end
 end

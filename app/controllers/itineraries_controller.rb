@@ -2,7 +2,12 @@ class ItinerariesController < ApplicationController
   before_filter :find_itinerary, :only => [:show, :edit, :update, :destroy]
 
   def index
-    @itineraries = Itinerary.all
+    if current_user
+      @user = current_user
+      @itineraries = @user.itineraries
+    else
+      @user = User.new
+    end
   end
 
   def new
@@ -38,9 +43,11 @@ class ItinerariesController < ApplicationController
   end
 
   def edit
+
   end
 
   def update
+
     if @itinerary.update_attributes(params[:itinerary])
       flash[:notice] = "Itinerary has been updated."
       redirect_to @itinerary

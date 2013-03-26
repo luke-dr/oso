@@ -1,8 +1,16 @@
 Oso::Application.routes.draw do
-  root :to => "itineraries#index"
+  root to: "itineraries#index"
+
+  namespace :admin do
+    root to: "base#index"
+    resources :users, :airlines
+  end
+
+  devise_for :users
+
   resources :itineraries
   resources :airlines
-  resources :travelers
+  resources :users
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
