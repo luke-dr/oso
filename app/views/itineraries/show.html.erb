@@ -32,5 +32,7 @@
     <li class="scheduled_departure_time"><%= flight.scheduled_departure_time %></li>
     <li class="departure_airport"><%= flight.departure_airport %></li>
     <li class="arrival_airport"><%= flight.arrival_airport %></li>
+    <li class="status"><%= flight.status %></li>
+    <li class="alt_flights"><%=raw @alt_flights %></li>
   <% end %>
 </ul>

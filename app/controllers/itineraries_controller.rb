@@ -39,7 +39,15 @@ class ItinerariesController < ApplicationController
         url = "http://www.flightstats.com/go/FlightStatus/flightStatusByFlight.do?airline=#{f.airline_code.downcase}&flightNumber=#{f.flight_number}&departureDate=#{f.scheduled_departure_time.to_date}&x=0&y=0"
         doc = Nokogiri::HTML(open(url))
         f.update_attribute(:status, Sanitize.clean(doc.css('.statusBlock .statusType').to_s).strip)
+      else
+        f.update_attribute(:status, "Available within 2 hours of flight.")
       end
+      if !f.status.to_s.downcase.include? "on-time"
+      url = "http://flightaware.com/live/findflight/#{f.departure_airport}/#{f.arrival_airport}/"
+      doc = Nokogiri::HTML(open(url))
+      @alt_flights = doc.css('table#Results').to_s
+      end
+
     end
   end
 
