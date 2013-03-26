@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 feature "Viewing Travelers" do
-traveler = Factory.create(:traveler)
 
   scenario "can show all traveler information" do
     visit '/travelers'

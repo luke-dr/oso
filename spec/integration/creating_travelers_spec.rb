@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 feature 'Creating Travelers' do
-  traveler = Factory.build(:traveler)
 
   before do
     visit '/travelers'
