@@ -9,6 +9,7 @@ class ItinerariesController < ApplicationController
       @itineraries = @user.itineraries
     else
       @user = User.new
+      @itineraries = @user.itineraries
     end
   end
 
@@ -19,6 +20,7 @@ class ItinerariesController < ApplicationController
 
   def create
     @itinerary = Itinerary.new(params[:itinerary])
+    @itinerary.user = current_user
     if @itinerary.save
       flash[:notice] = "Itinerary has been created."
       redirect_to @itinerary

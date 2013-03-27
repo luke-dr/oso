@@ -25,7 +25,8 @@ feature "Editing users" do
 
     page.should have_content("Ethan Allen")
     page.should have_content("ethan@allen.net")
-    page.should have_content("*updated *successfully *email *confirm *address")
+    page.should have_content("click on the confirm link to finalize confirming your new email address")
+    current_path.should == user_path(user)
   end
 
   scenario "can NOT submit blank email, blank name okay" do

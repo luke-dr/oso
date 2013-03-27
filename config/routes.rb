@@ -12,6 +12,8 @@ Oso::Application.routes.draw do
   resources :airlines
   resources :users
 
+  match "/account" => "users#show", :as => "account"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -4,11 +4,22 @@
       <div class='row'>
         <div class='span12'>
           <nav>
-            <%= link_to "OSO", itineraries_path, id: "logo" %>
+            <ul class="nav pull-left">
+              <li><%= link_to "OSO", itineraries_path, id: "logo" %></li>
+            <% if user_signed_in? %>
+              <li><%= link_to "Itineraries", itineraries_path %></li>
+            <% end %>
+            </ul>
               <ul class="nav pull-right">
-                <li><%= link_to "Itineraries", itineraries_path %></li>
               <% if user_signed_in? %>
-                <li><%= link_to "Account", user_path(current_user) %></li>
+                <li>
+                  <% if current_user.name %>
+                    <%= link_to current_user.name.titleize, "#" %>
+                  <% else %>
+                    <%= link_to current_user.email, "#" %>
+                  <% end %>
+                </li>
+                <li><%= link_to "Account", account_path %></li>
                 <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
                 <li><%= current_user.name %></li>
               <% else %>
