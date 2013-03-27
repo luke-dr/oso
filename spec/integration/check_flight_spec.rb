@@ -1,6 +1,4 @@
-require 'rubygems'
-require 'nokogiri'
-require 'open-uri'
+require 'spec_helper'
 
 feature "Check flight status" do
   let!(:user) { Factory(:user_confirmed) }
@@ -16,7 +14,9 @@ feature "Check flight status" do
     fill_in 'Name', :with => "Jayml's family vacation"
     fill_in 'Airline code', :with => "AA"
     fill_in 'Flight number', :with => "5"
-    fill_in 'Flight date', :with => '5/20/2013'
+    select  '2013', :from =>'itinerary_flights_attributes_0_scheduled_departure_time_1i'
+    select  'March', :from =>'itinerary_flights_attributes_0_scheduled_departure_time_2i'
+    select  '27', :from =>'itinerary_flights_attributes_0_scheduled_departure_time_3i'
     fill_in 'Departure airport', :with => "DFW"
     fill_in 'Arrival airport', :with => "Sea"
     click_button "Save Itinerary"
