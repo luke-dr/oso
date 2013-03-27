@@ -22,7 +22,7 @@
 
 <nav>
   <% if user_signed_in? %>
-    <div><%= link_to "Account", @user %> | <%= link_to "Sign out", destroy_user_session_path, :method => :delete %></div>
+    <div><%= current_user.name %> | <%= link_to "Account", @user %> | <%= link_to "Sign out", destroy_user_session_path, :method => :delete %></div>
   <% else %>
     Welcome!<br>
     <%= link_to "Sign up", new_user_registration_path %> | <%= link_to "Sign in", new_user_session_path %>
