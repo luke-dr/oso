@@ -13,6 +13,5 @@ feature "Signing in" do
     page.should have_content("Signed in successfully.")
     page.should have_content(user.name)
     page.current_path.should == "/"
-    save_and_open_page
   end
 end
