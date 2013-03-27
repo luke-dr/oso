@@ -7,11 +7,11 @@
 <h2>Open Stories: <%= @project.name %> Project</h2>
 <table border="1" cellpadding="5">
   <tr>
-    <th>Name</th><th>Type</th><th>Status</th>
+    <th>Name</th><th>Type</th><th>Status</th><th>Owner</th>
   </tr>
   <% @stories.each do |s| %>
     <tr>
-      <td><a href='<%= s::url %>' target="_blank"><%= s::name %></a></td><td><%= s::story_type %></td><td><%= s::current_state %></td>
+      <td><a href='<%= s::url %>' target="_blank"><%= s::name %></a></td><td><%= s::story_type %></td><td><%= s::current_state %></td><td><%= s::requested_by %></td>
     </tr>
   <% end %>
 </table>

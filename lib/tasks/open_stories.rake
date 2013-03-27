@@ -7,7 +7,7 @@ desc "Pivotal Tracker"
     @project = PivotalTracker::Project.find(783957)
     @stories = @project.stories.all
     @stories.each do |s|
-      puts s.inspecters
+      puts s.inspect
     end
 
 end
