@@ -6,10 +6,7 @@ body {
   padding-top: 40px;
   background-color: #696969;
   background-image: url('app/assets/images/debut_dark.png') repeat;
-}
-
-#pagetitle {
-  background-color: #02D3A2;
+  font-family: 'Lato', sans-serif;
 }
 
 .main {
@@ -22,12 +19,17 @@ body {
   -moz-border-radius-bottomleft: 10px;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
+
   padding-left: 15px;
   padding-right: 15px;
   padding-bottom: 15px;
   box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.42);
   -moz-box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.42);
   -webkit-box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.42);
+}
+
+#flights {
+  padding-top: 15px;
 }
 
 
@@ -75,8 +77,32 @@ body {
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
-  color:#02D3A2;
+
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+  font-family: 'Arvo', serif;
+}
+
+h1 {
+  font-size: 31.5px;
+  color:#02D3A2;
+}
+h2 {
+  font-size: 24.5px;
+  color:gray;
+}
+h3 {
+  font-size: 17.5px;
+  color:gray;
+}
+h4 {
+  font-size: 14.5px;
+  color:gray;
+}
+h5 {
+  font-size: 11px;
+}
+h6 {
+  font-size: 10px;
 }
 
 /* header */
@@ -95,6 +121,12 @@ h1, h2, h3, h4, h5, h6 {
 #logo:hover {
   color: #fff;
   text-decoration: none;
+}
+
+#welcome_user{
+  padding: 10px 15px 10px;
+  color: #9FDCCC;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 
 /* footer */
