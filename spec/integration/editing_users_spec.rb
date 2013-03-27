@@ -33,9 +33,9 @@ feature "Editing users" do
     fill_in "Email", with: nil
     fill_in "Current password", with: user.password
     click_button "Update"
+
     page.should have_content("Email can't be blank")
     page.should_not have_content("Name can't be blank")
-
   end
 
   scenario "can NOT change stored email to one already in the DB" do

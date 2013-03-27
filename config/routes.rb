@@ -6,7 +6,7 @@ Oso::Application.routes.draw do
     resources :users, :airlines
   end
 
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => :registrations }
 
   resources :itineraries
   resources :airlines
