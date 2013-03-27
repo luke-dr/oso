@@ -1,4 +1,4 @@
-require 'spec_helper'
+  require 'spec_helper'
 
 feature "Creating flights" do
   let!(:user) { Factory(:user_confirmed) }

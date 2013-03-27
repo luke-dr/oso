@@ -15,8 +15,8 @@
     <% @itineraries.each do |itinerary| %>
       <tr>
         <td>&#9992; <%= link_to itinerary.name, itinerary %></td>
-        <td><%= itinerary.created_at.strftime("%b %-d %Y")%></td>
-        <td><%= itinerary.flights.first.scheduled_departure_time%></td>
+        <td><%= itinerary.created_at.strftime("%b %-d %Y") %></td>
+        <td><%= itinerary.flights.first.scheduled_departure_time.strftime("%b %-d %Y") %></td>
       </tr>
     <% end %>
   </table>
