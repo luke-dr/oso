@@ -5,11 +5,13 @@ desc "Fetch flight list"
     require 'open-uri'
     require 'sanitize'
 
-      url = "http://www.flightstats.com/go/FlightSchedules/schedules.do?departure=dfw&arrival=lax&depDate=2013-3-26&tripType=1"
+      url = "http://flightaware.com/live/findflight/dfw/KLAX/"
       doc = Nokogiri::HTML(open(url))
       puts url
-#      puts doc.css('.sfArr , .sfDep, .scheduledAirlineLogo')
-#      puts doc.
+#      puts doc
+#      puts doc.css('#ffinder-results')
+      puts doc.css('table#Results').to_s
+ #     puts doc
 #      doc = Nokogiri::HTML(open(url))
 #      puts Sanitize.clean(doc.css('.statusBlock .statusType').to_s).strip
 

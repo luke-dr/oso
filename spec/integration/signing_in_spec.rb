@@ -11,6 +11,7 @@ feature "Signing in" do
     fill_in "Password", with: user.password
     click_button "Sign in"
     page.should have_content("Signed in successfully.")
-    page.current_path.should == "/users"
+    page.should have_content(user.name)
+    page.current_path.should == "/"
   end
 end
