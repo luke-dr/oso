@@ -1,38 +1,47 @@
 <% title(@itinerary.name, "Itineraries") %>
 
-<h2><%= @itinerary.name %></h2>
-<table class='table table-hover'>
-    <thead><th>Airline Code</th><th>Flight Number</th>
-            <th>Scheduled Departure Time</th><th>Departure Airport</th>
-            <th>Arrival Airport</th>
-    </thead>
-    <tbody>
-        <% @itinerary.flights.each do |flight| %>
-        <tr>
-            <td><%= flight.airline_code %></td>
-            <td><%= flight.airline_code %></td>
-            <td><%= flight.scheduled_departure_time %></td>
-            <td><%= flight.departure_airport %></td>
-            <td><%= flight.arrival_airport %></td>
-        </tr>
-        <% end %>
-    </tbody>
-</table>
+<section>
+    <div class='row'>
+      <div class='span12 main'>
+        <h2><%= @itinerary.name %></h2>
+        <table class='table table-hover' id="itinerary_details">
+            <thead><th>Airline Code</th><th>Flight Number</th>
+                <th>Scheduled Departure Time</th><th>Departure Airport</th>
+                <th>Arrival Airport</th><th>Flight Status</th>
+            </thead>
+            <tbody>
+                <% @itinerary.flights.each do |flight| %>
+                <tr>
+                    <td><%= flight.airline_code %></td>
+                    <td><%= flight.airline_code %></td>
+                    <td><%= flight.scheduled_departure_time %></td>
+                    <td><%= flight.departure_airport %></td>
+                    <td><%= flight.arrival_airport %></td>
+                    <td><%= flight.status %></td>
+                    <td><%= link_to "Edit Itinerary", edit_itinerary_path(@itinerary), :class => 'btn btn-primary' %> </td>
+                    <td><%= link_to "Delete Itinerary", itinerary_path(@itinerary),
+                    :class => 'btn btn-mini btn-danger',
+                    :method => :delete,
+                    :confirm => "Are you sure you want to delete this itinerary?" %></td>
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
 
-<%= link_to "Edit Itinerary", edit_itinerary_path(@itinerary), :class => 'btn btn-primary' %> <br>
-<%= link_to "Delete Itinerary",
+        <%= link_to "Edit Itinerary", edit_itinerary_path(@itinerary), :class => 'btn btn-primary' %> <br>
+        <%= link_to "Delete Itinerary",
             itinerary_path(@itinerary),
             :class => 'btn btn-mini btn-danger',
             :method => :delete,
             :confirm => "Are you sure you want to delete this itinerary?" %>
-<ul class="flights">
-  <% @itinerary.flights.each do |flight| %>
-    <li class="airline_code"><%= flight.airline_code %></li>
-    <li class="flight_number"><%= flight.flight_number %></li>
-    <li class="scheduled_departure_time"><%= flight.scheduled_departure_time %></li>
-    <li class="departure_airport"><%= flight.departure_airport %></li>
-    <li class="arrival_airport"><%= flight.arrival_airport %></li>
-    <li class="status"><%= flight.status %></li>
-    <li class="alt_flights"><%=raw @alt_flights %></li>
-  <% end %>
-</ul>
+
+        <ul class="flights">
+          <% @itinerary.flights.each do |flight| %>
+          <li class="alt_flights"><%=raw @alt_flights %></li>
+          <% end %>
+      </ul>
+
+  </div>
+</div>
+
+</section>

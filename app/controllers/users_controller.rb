@@ -1,16 +1,8 @@
 class UsersController < ApplicationController
 before_filter :authenticate_user!, :except => [:new, :update]
-before_filter :find_user, :only => [#:show,
-                                    :edit,
-                                    :update,
-                                    :destroy]
-
-  def new
-    @user = User.new
-  end
+before_filter :find_current_user, :only => [:show, :edit, :update, :destroy]
 
   def show
-    @user = User.find(current_user)
   end
 
   def edit
@@ -34,8 +26,8 @@ before_filter :find_user, :only => [#:show,
 
   private
 
-  def find_user
-    @user = User.find(params[:id])
+  def find_current_user
+    @user = User.find(current_user)
   end
 
 end

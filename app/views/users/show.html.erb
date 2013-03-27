@@ -1,18 +1,26 @@
-<%= link_to "Return to Itineraries", itineraries_path %>
-<h2><%= "#{@user.name}" %></h2>
+<h2>
+  <% if current_user.name %>
+    <%= "#{@user.name}'s Account Settings" %>
+  <% else %>
+    <%= "Your Account Settings" %>
+  <% end %>
+</h2>
 
-<% if @user.unconfirmed_email %>
-  <h3><%= @user.unconfirmed_email %> - Make sure to confirm your new email!</h3>
-<% else %>
-  <h3><%= @user.email %></h3>
-<% end %>
+<table class='table table-hover'>
+    <tbody>
+        <tr>
+            <td>email:</td>
+            <td><%= current_user.email %></td>
+        </tr>
+        <tr>
+            <td>password:</td>
+            <td>********</td>
+        </tr>
+    </tbody>
+</table>
 
-
-<h3>Password: ***</h3>
-
-
-<%= link_to "Edit Contact Information", edit_user_path(@user) %> <br>
-<%= link_to "Change Your Password", edit_user_registration_path(@user) %> <br>
-<%= link_to "Delete Account", user_path(@user),
-        method: :delete,
-        confirm: "Are you sure you want to delete your account?" %>
+<%= link_to "Edit My Account", edit_user_registration_path(current_user), :class => "btn btn-primary" %> <br>
+<%= link_to "Delete My Account", registration_path(current_user),
+                                :data => { :confirm => "Are you sure?" },
+                                :method => :delete,
+                                :class => 'btn btn-mini btn-danger' %>

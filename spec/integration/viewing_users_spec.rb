@@ -9,6 +9,6 @@ feature "Viewing User Profile" do
     click_link "Account"
     page.should have_content(user.name)
     page.should have_content(user.email)
-    page.should have_content("Delete Account")
+    page.should have_content("Delete My Account")
   end
 end

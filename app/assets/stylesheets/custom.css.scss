@@ -8,6 +8,10 @@ body {
   background-image: url('app/assets/images/debut_dark.png') repeat;
 }
 
+#pagetitle {
+  background-color: #02D3A2;
+}
+
 .main {
   background-color: #F0EAD6;
   border-top: 7px solid;
@@ -25,6 +29,8 @@ body {
   -moz-box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.42);
   -webkit-box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.42);
 }
+
+
 
 /* buttons */
 
@@ -81,6 +87,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.7em;
   color: #9FDCCC;
   padding-top: 9px;
+  padding-left: 15px;
   font-weight: bold;
   line-height: 1;
 }

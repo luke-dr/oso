@@ -1,9 +1,10 @@
 class ItinerariesController < ApplicationController
   before_filter :authenticate_user!, :except => :index
   before_filter :find_itinerary, :only => [:show, :edit, :update, :destroy]
+  before_filter :find_current_user, :except => :index
 
   def index
-    if current_user
+    if user_signed_in?
       @user = current_user
       @itineraries = @user.itineraries
     else
@@ -56,7 +57,6 @@ class ItinerariesController < ApplicationController
   end
 
   def update
-
     if @itinerary.update_attributes(params[:itinerary])
       flash[:notice] = "Itinerary has been updated."
       redirect_to @itinerary
@@ -67,7 +67,6 @@ class ItinerariesController < ApplicationController
   end
 
   def destroy
-
     @itinerary.destroy
     flash[:notice] = "Itinerary has been deleted."
     redirect_to itineraries_path
