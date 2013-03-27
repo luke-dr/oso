@@ -61,3 +61,4 @@ gem "nokogiri", "~> 1.5.9"
 gem "sanitize"
 gem "mechanize", "~> 2.6.0"
 
+gem "pivotal-tracker", "~> 0.5.10"
