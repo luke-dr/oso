@@ -4,7 +4,7 @@ class ItinerariesController < ApplicationController
   before_filter :find_current_user, :except => :index
 
   def index
-    if current_user
+    if user_signed_in?
       @user = current_user
       @itineraries = @user.itineraries
     else
