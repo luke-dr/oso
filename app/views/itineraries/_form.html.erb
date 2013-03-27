@@ -13,7 +13,7 @@
       <%= flight.text_field :flight_number %>
 
       <%= flight.label :scheduled_departure_time, "Flight date" %>
-      <%= flight.date_select :scheduled_departure_time %>
+      <%= flight.date_select :scheduled_departure_time, :order => [:month, :day, :year] %>
 
       <%= flight.label :departure_airport %>
       <%= flight.text_field :departure_airport %>
