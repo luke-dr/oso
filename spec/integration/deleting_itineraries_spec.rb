@@ -3,6 +3,8 @@ require 'spec_helper'
 feature "Deleting itineraries" do
   let!(:itinerary) { Factory(:itinerary, :name => "Family Vacation", :user => user) }
   let!(:itinerary_other) { Factory(:itinerary, :user => user) }
+  let!(:flight) { Factory(:flight, :itinerary => itinerary) }
+  let!(:flight_other) { Factory(:flight, :itinerary => itinerary_other) }
   let!(:user) { Factory(:user_confirmed) }
 
   scenario "Deleting an itinerary" do

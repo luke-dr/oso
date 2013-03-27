@@ -5,6 +5,8 @@ feature "Viewing itineraries" do
   let!(:other_user) { Factory(:user_confirmed) }
   let!(:itinerary_1) { Factory(:itinerary, :name => "Family Vacation", :user => user) }
   let!(:itinerary_2) { Factory(:itinerary, :name => "Christmas Vacation", :user => user) }
+  let!(:flight_1) { Factory(:flight, :itinerary => itinerary_1) }
+  let!(:flight_2) { Factory(:flight, :itinerary => itinerary_2) }
   let!(:other_itinerary) { Factory(:itinerary, :name => "Not your trip", :user => other_user) }
 
   before do
