@@ -1,6 +1,6 @@
 <h2>
-  <% if current_user.name %>
-    <%= "#{@user.name}'s Account Settings" %>
+  <% if current_user.name.downcase =~ /[aeiou]/ %>
+    <%= "#{@user.name.titleize}'s Account Settings" %>
   <% else %>
     <%= "Your Account Settings" %>
   <% end %>
@@ -11,11 +11,11 @@
         <tr>
             <td>email:</td>
             <td>
-                <% if current_user.unconfirmed_email %>
-                    <%= current_user.unconfirmed_email %>
-                <% else %>
-                    <%= current_user.email %>
-                <% end %>
+              <% if current_user.unconfirmed_email %>
+                  <%= current_user.unconfirmed_email %> <!-- need to indicate this is unconfirmed -->
+              <% else %>
+                  <%= current_user.email %>
+              <% end %>
             </td>
         </tr>
         <tr>
