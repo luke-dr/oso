@@ -1,0 +1,43 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <div class='row'>
+        <div class='span12'>
+          <nav>
+            <ul class="nav pull-left">
+              <li><%= link_to "OSO", itineraries_path, id: "logo" %></li>
+            <% if user_signed_in? %>
+              <li><%= link_to "Itineraries", itineraries_path %></li>
+            <% end %>
+            </ul>
+              <ul class="nav pull-right">
+<<<<<<< HEAD
+              <% if user_signed_in? %>
+                <li>
+                  <% if current_user.name %>
+                    <%= link_to current_user.name.titleize, "#" %>
+                  <% else %>
+                    <%= link_to current_user.email, "#" %>
+                  <% end %>
+                </li>
+                <li><%= link_to "Account", account_path %></li>
+=======
+              <% if user_signed_in? %>
+                <li id='welcome_user'>Welcome <%= current_user.name %></li>
+              <% end %>
+                <li><%= link_to "Itineraries", itineraries_path %></li>
+              <% if user_signed_in? %>
+                <li><%= link_to "My Account", user_path(current_user) %></li>
+>>>>>>> 7210e45cfc325075b5d26cc31c7cb710f3734f6b
+                <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+              <% else %>
+                <li><%= link_to "Sign in", new_user_session_path %></li>
+                <li><%= link_to "Sign up", new_user_registration_path %></li>
+              <% end %>
+              </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

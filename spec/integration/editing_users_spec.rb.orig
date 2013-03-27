@@ -22,11 +22,15 @@ feature "Editing users" do
     fill_in "Password confirmation", with: "passwordnew"
     fill_in "Current password", with: user.password
     click_button "Update"
-
     page.should have_content("Ethan Allen")
+<<<<<<< HEAD
     page.should have_content("ethan@allen.net")
     page.should have_content("click on the confirm link to finalize confirming your new email address")
-    current_path.should == account_path
+    current_path.should == user_path(user)
+=======
+    #page.should have_content("ethan@allen.net")
+    #page.should have_content("*updated *successfully *email *confirm *address")
+>>>>>>> 7210e45cfc325075b5d26cc31c7cb710f3734f6b
   end
 
   scenario "can NOT submit blank email, blank name okay" do

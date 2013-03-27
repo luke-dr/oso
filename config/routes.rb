@@ -6,11 +6,13 @@ Oso::Application.routes.draw do
     resources :users, :airlines
   end
 
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => :registrations }
 
   resources :itineraries
   resources :airlines
   resources :users
+
+  match "/account" => "users#show", :as => "account"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
