@@ -1,7 +1,10 @@
-<h1>Itineraries</h1> <%= link_to "Create an itinerary", new_itinerary_path, :class => 'btn btn-primary' %>
+
 <% unless user_signed_in? %>
-  <h3>Get started now! <%= link_to "Create an itinerary", new_itinerary_path %></h3>
+
+  <h1>Welcome to OSO!</h1> <%= link_to "Create an itinerary", new_itinerary_path, :class => 'btn btn-primary' %>
 <% else %>
+  <div id='existing_itineraries'>
+    <h1>Itineraries</h1>
   <table class='table table-hover'>
     <thead>
       <td> Itinerary Name </td>
@@ -11,10 +14,12 @@
 
     <% @itineraries.each do |itinerary| %>
       <tr>
-        <td><%= link_to itinerary.name, itinerary %></td>
+        <td>&#9992; <%= link_to itinerary.name, itinerary %></td>
         <td><%= itinerary.created_at.strftime("%b %-d %Y")%></td>
 
       </tr>
     <% end %>
   </table>
+  <br><%= link_to "Create an itinerary", new_itinerary_path, :class => 'btn btn-primary' %>
 <% end %>
+</div>
