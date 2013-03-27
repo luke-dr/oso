@@ -11,7 +11,7 @@
   </tr>
   <% @stories.each do |s| %>
     <tr>
-      <td><%= s::name %></td><td><%= s::story_type %></td><td><%= s::current_state %></td>
+      <td><a href='<%= s::url %>' target="_blank"><%= s::name %></a></td><td><%= s::story_type %></td><td><%= s::current_state %></td>
     </tr>
   <% end %>
 </table>
