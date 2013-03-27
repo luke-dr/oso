@@ -1,33 +1,28 @@
   <%= form_for @itinerary do |f| %><br />
   <%= f.error_messages %>
-  <p>
+
     <%= f.label :name %>
     <%= f.text_field :name %>
-  </p><br>
-<h2>Flight</h2>
+
+<h3>Flight Details</h3>
   <%= f.fields_for :flights do |flight| %>
-    <p>
       <%= flight.label :airline_code %>
       <%= flight.text_field :airline_code %>
-    </p>
-    <p>
+
       <%= flight.label :flight_number %>
       <%= flight.text_field :flight_number %>
-    </p>
-    <p>
+
       <%= flight.label :scheduled_departure_time, "Flight date" %>
       <%= flight.text_field :scheduled_departure_time %>
-    </p>
-    <p>
+
       <%= flight.label :departure_airport %>
       <%= flight.text_field :departure_airport %>
-    </p>
-    <p>
+
       <%= flight.label :arrival_airport %>
       <%= flight.text_field :arrival_airport %>
-    </p>
+
   <% end %>
   <p>
-    <%= f.submit 'Save Itinerary'%>
+    <%= f.submit 'Save Itinerary', :class => 'btn btn-primary'  %>
   </p>
 <% end %>
