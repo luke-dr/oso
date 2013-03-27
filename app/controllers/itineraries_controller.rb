@@ -9,6 +9,7 @@ class ItinerariesController < ApplicationController
       @itineraries = @user.itineraries
     else
       @user = User.new
+      @itineraries = @user.itineraries
     end
   end
 
@@ -19,6 +20,7 @@ class ItinerariesController < ApplicationController
 
   def create
     @itinerary = Itinerary.new(params[:itinerary])
+    @itinerary.user = current_user
     if @itinerary.save
       flash[:notice] = "Itinerary has been created."
       redirect_to @itinerary
@@ -43,7 +45,7 @@ class ItinerariesController < ApplicationController
       else
         f.update_attribute(:status, "Available within 2 hours of flight.")
       end
-      if (!f.status.to_s.downcase.include? "on-time") || (!f.status.to_s.downcase.include? "schduled")
+      if !(f.status.to_s.downcase.include? "on-time") && !(f.status.to_s.downcase.include? "scheduled")
       url = "http://flightaware.com/live/findflight/#{f.departure_airport}/#{f.arrival_airport}/"
       doc = Nokogiri::HTML(open(url))
       @alt_flights = doc.css('table#Results').to_s

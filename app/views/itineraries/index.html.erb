@@ -1,13 +1,21 @@
-<h1>Itineraries</h1>
-<% if !user_signed_in? %>
-  <h4>Get started now! </h4><%= link_to "Create an itinerary", new_itinerary_path, :class => 'btn btn-primary' %>
-<% else %>
-  <div id='existing_itineraries'>
-  <ul>
-    <% @itineraries.each do |itinerary| %>
-      <li>&#9992;<%= link_to itinerary.name, itinerary %></li>
-    <% end %>
-  </ul>
-  <%= link_to "Create an itinerary", new_itinerary_path, :class => 'btn btn-primary' %>
+<h2>Itineraries : <%= link_to "Create an itinerary", new_itinerary_path %></h2>
+<% unless user_signed_in? %>
+  <h3>Get started now! <%= link_to "Create an itinerary", new_itinerary_path %></h3>
 <% end %>
-</div>
+  <table class='table table-hover'>
+    <thead>
+      <td> Itinerary Name </td>
+      <td> Created on </td>
+      <td> Date Range </td>
+      <td> Status </td>
+    </thead>
+
+    <% @itineraries.each do |itinerary| %>
+      <tr>
+        <td><%= link_to itinerary.name, itinerary %></td>
+        <td><%= link_to itinerary.created_at, "#" %></td>
+        <td><%= link_to itinerary.flights.all.sort, itinerary %></td>
+        <td><%= link_to itinerary.flights.all.sort, itinerary %></td>
+      </tr>
+    <% end %>
+  </table>

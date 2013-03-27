@@ -4,3 +4,15 @@
   <li><%= link_to "Manage Airlines", admin_airlines_path %></li>
   <li><%= link_to "Manage User Accounts", admin_users_path %></li>
 </ul>
+<h2>Open Stories: <%= @project.name %> Project</h2>
+<table border="1" cellpadding="5">
+  <tr>
+    <th>Name</th><th>Type</th><th>Status</th>
+  </tr>
+  <% @stories.each do |s| %>
+    <tr>
+      <td><a href='<%= s::url %>' target="_blank"><%= s::name %></a></td><td><%= s::story_type %></td><td><%= s::current_state %></td>
+    </tr>
+  <% end %>
+</table>
+

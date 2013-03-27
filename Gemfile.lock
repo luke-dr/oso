@@ -52,6 +52,7 @@ GEM
       execjs
     coffee-script-source (1.6.2)
     columnize (0.3.6)
+    crack (0.3.2)
     database_cleaner (0.9.1)
     debugger (1.5.0)
       columnize (>= 0.3.1)
@@ -74,6 +75,8 @@ GEM
     factory_girl (2.6.4)
       activesupport (>= 2.3.9)
     ffi (1.6.0)
+    happymapper (0.4.0)
+      libxml-ruby (~> 2.0)
     hike (1.2.1)
     i18n (0.6.1)
     journey (1.0.4)
@@ -85,6 +88,7 @@ GEM
       addressable (~> 2.3)
     letter_opener (1.1.0)
       launchy (~> 2.2.0)
+    libxml-ruby (2.6.0)
     mail (2.5.3)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -103,8 +107,18 @@ GEM
     net-http-digest_auth (1.2.1)
     net-http-persistent (2.8)
     nokogiri (1.5.9)
+    nokogiri-happymapper (0.5.6)
+      nokogiri (~> 1.5)
     ntlm-http (0.1.1)
     orm_adapter (0.4.0)
+    pivotal-tracker (0.5.10)
+      builder
+      crack
+      happymapper (>= 0.3.2)
+      nokogiri (>= 1.4.3)
+      nokogiri (>= 1.5.5)
+      nokogiri-happymapper (>= 0.5.4)
+      rest-client (~> 1.6.0)
     polyglot (0.3.3)
     pry (0.9.12)
       coderay (~> 1.0.5)
@@ -143,6 +157,8 @@ GEM
     rake (10.0.4)
     rdoc (3.12.2)
       json (~> 1.4)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     rspec-core (2.13.1)
     rspec-expectations (2.13.0)
       diff-lcs (>= 1.1.3, < 2.0)
@@ -214,6 +230,7 @@ DEPENDENCIES
   letter_opener
   mechanize (~> 2.6.0)
   nokogiri (~> 1.5.9)
+  pivotal-tracker (~> 0.5.10)
   pry-debugger
   pry-doc
   pry-rails
