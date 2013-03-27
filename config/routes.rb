@@ -8,9 +8,13 @@ Oso::Application.routes.draw do
 
   devise_for :users, :controllers => { :registrations => :registrations }
 
-  resources :itineraries
+  resources :itineraries do
+    resources :flights
+  end
+
   resources :airlines
   resources :users
+
 
   match "/account" => "users#show", :as => "account"
 

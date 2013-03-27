@@ -1,0 +1,20 @@
+<h3>Flight Details</h3>
+    <%= form_for [@itinerary, @flight] do |flight| %>
+
+      <%= flight.label :airline_code %>
+      <%= flight.text_field :airline_code %>
+
+      <%= flight.label :flight_number %>
+      <%= flight.text_field :flight_number %>
+
+      <%= flight.label :scheduled_departure_time, "Flight date" %>
+      <%= flight.text_field :scheduled_departure_time %>
+
+      <%= flight.label :departure_airport %>
+      <%= flight.text_field :departure_airport %>
+
+      <%= flight.label :arrival_airport %>
+      <%= flight.text_field :arrival_airport %>
+  <br>
+      <%= flight.submit %>
+  <% end %>

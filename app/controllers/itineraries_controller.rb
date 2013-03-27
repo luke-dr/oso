@@ -55,7 +55,7 @@ class ItinerariesController < ApplicationController
   end
 
   def edit
-
+    @flights = @itinerary.flights
   end
 
   def update

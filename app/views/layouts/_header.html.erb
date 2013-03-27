@@ -9,7 +9,7 @@
               <% if user_signed_in? %>
                 <li id='welcome_user'>
                   Welcome
-  				      <% if current_user.name.downcase =~ /[aeiou]/ %>
+  				      <% if current_user.name && current_user.name.downcase =~ /[aeiou]/ %>
                   <%= current_user.name.titleize %>
                 <% else %>
                   <%= current_user.email %>

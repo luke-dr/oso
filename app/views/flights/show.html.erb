@@ -1,0 +1,31 @@
+<table class='table table-hover' id="itinerary_details">
+    <thead>
+      <th>Airline Code</th><th>Flight Number</th>
+      <th>Scheduled Departure Time</th><th>Departure Airport</th>
+      <th>Arrival Airport</th><th>Flight Status</th>
+    </thead>
+    <tbody>
+    <tr>
+      <td><%= @flight.airline_code %></td>
+      <td><%= @flight.flight_number %></td>
+      <td><%= @flight.scheduled_departure_time %></td>
+      <td><%= @flight.departure_airport %></td>
+      <td><%= @flight.arrival_airport %></td>
+      <td><%= @flight.status %></td>
+    </tr>
+      <tr>
+        <td class="flight_id_<%= @flight.id.to_s %>" colspan="6">
+                <%= link_to "Back", :back, :class => "btn btn-mini btn-primary" %>&nbsp;
+        </td>
+      </tr>
+  </tbody>
+</table>
+
+<div class='row'>
+  <div class='span12' id='flights'>
+    <h3>Alternative Flight Options</h3>
+    <p class="alt_flights">
+      <li><%=raw @alt_flights %></li>
+    </p>
+  </div>
+</div>
