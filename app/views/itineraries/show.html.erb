@@ -1,9 +1,8 @@
 <% title(@itinerary.name, "Itineraries") %>
 
 <section>
-    <div class='row'>
-      <div class='span12 main'>
-        <h2><%= @itinerary.name %></h2>
+
+        <h1><%= @itinerary.name %></h1>
         <table class='table table-hover' id="itinerary_details">
             <thead><th>Airline Code</th><th>Flight Number</th>
                 <th>Scheduled Departure Time</th><th>Departure Airport</th>
@@ -18,11 +17,6 @@
                     <td><%= flight.departure_airport %></td>
                     <td><%= flight.arrival_airport %></td>
                     <td><%= flight.status %></td>
-                    <td><%= link_to "Edit Itinerary", edit_itinerary_path(@itinerary), :class => 'btn btn-primary' %> </td>
-                    <td><%= link_to "Delete Itinerary", itinerary_path(@itinerary),
-                    :class => 'btn btn-mini btn-danger',
-                    :method => :delete,
-                    :confirm => "Are you sure you want to delete this itinerary?" %></td>
                 </tr>
                 <% end %>
             </tbody>
@@ -35,13 +29,15 @@
             :method => :delete,
             :confirm => "Are you sure you want to delete this itinerary?" %>
 
-        <ul class="flights">
+        <div class='row'>
+            <div class='span12' id='flights'>
           <% @itinerary.flights.each do |flight| %>
-          <li class="alt_flights"><%=raw @alt_flights %></li>
+          <h3>Alternative Flight Options</h3>
+          <p class="alt_flights"><%=raw @alt_flights %></li>
           <% end %>
-      </ul>
-
+        </p>
   </div>
 </div>
+
 
 </section>
