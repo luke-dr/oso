@@ -7,15 +7,3 @@
       <li><%= user.email %></li><br />
     <% end %>
   </ul>
-  <h2>Open Stories: <%= @project.name %> Project</h2>
-  <table border="1" cellpadding="5">
-    <tr>
-      <td>Name</td><td>Type</td>
-    </tr>
-    <% @stories.each do |s| %>
-      <tr>
-        <td><%= s::name %></td><td><%= s::story_type %></td>
-      </tr>
-    <% end %>
-  </table>
-
