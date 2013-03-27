@@ -4,5 +4,6 @@ FactoryGirl.define do
     flight_number "5"
     departure_airport "DFW"
     arrival_airport "Sea"
+    itinerary
   end
 end

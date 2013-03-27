@@ -4,6 +4,9 @@
     <%= f.label :name %>
     <%= f.text_field :name %>
 
+<<<<<<< HEAD
+    <%= f.submit 'Save Itinerary', :class => 'btn btn-primary'  %>
+=======
 <h3>Flight Details</h3>
   <%= f.fields_for :flights do |flight| %>
       <%= flight.label :airline_code %>
@@ -20,9 +23,7 @@
 
       <%= flight.label :arrival_airport %>
       <%= flight.text_field :arrival_airport %>
+>>>>>>> 0ada799870d402cf99320db9a84644731162ddd8
 
   <% end %>
-  <p>
-    <%= f.submit 'Save Itinerary', :class => 'btn btn-primary'  %>
-  </p>
-<% end %>
+
