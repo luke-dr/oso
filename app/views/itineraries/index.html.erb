@@ -1,11 +1,13 @@
-<h2>Itineraries</h2>
+<h1>Itineraries</h1>
 <% if !user_signed_in? %>
-  <h3>Get started now! <%= link_to "Create an itinerary", new_itinerary_path %></h3>
+  <h4>Get started now! </h4><%= link_to "Create an itinerary", new_itinerary_path, :class => 'btn btn-primary' %>
 <% else %>
+  <div id='existing_itineraries'>
   <ul>
-    <%= link_to "Create an itinerary", new_itinerary_path %>
     <% @itineraries.each do |itinerary| %>
-      <li><%= link_to itinerary.name, itinerary %></li>
+      <li>&#9992;<%= link_to itinerary.name, itinerary %></li>
     <% end %>
   </ul>
+  <%= link_to "Create an itinerary", new_itinerary_path, :class => 'btn btn-primary' %>
 <% end %>
+</div>
