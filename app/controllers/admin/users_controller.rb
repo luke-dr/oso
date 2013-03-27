@@ -3,9 +3,6 @@ class Admin::UsersController < Admin::BaseController
 
   def index
     @users = User.all
-    PivotalTracker::Client.token = '7359568a48cabd658d883d5993365410'
-    @project = PivotalTracker::Project.find(783957)
-    @stories = @project.stories.all
   end
 
   def new
