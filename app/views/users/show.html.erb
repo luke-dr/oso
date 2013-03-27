@@ -1,5 +1,5 @@
 <h2>
-  <% if current_user.name.downcase =~ /[aeiou]/ %>
+  <% if current_user.name && current_user.name.downcase =~ /[aeiou]/ %>
     <%= "#{@user.name.titleize}'s Account Settings" %>
   <% else %>
     <%= "Your Account Settings" %>
