@@ -5,7 +5,8 @@
 body {
   padding-top: 40px;
   background-color: #696969;
-  background-image: url('app/assets/images/debut_dark.png') repeat;
+  background-image: image-url("debut_dark.png");
+  background-repeat: repeat;
   font-family: 'Lato', sans-serif;
 }
 
@@ -40,6 +41,28 @@ body {
   list-style-type: none;
   margin: 0;
   padding-bottom: 20px;
+}
+
+#home_sign_up_in {
+    min-height: 200px;
+    width: 353px;
+    margin-top: 15px;
+
+    border: 1px solid rgba(249,89,42,0.4);
+    border-radius: 4px;
+
+    background-color: #fcdfd6;
+    background-image:
+        linear-gradient(-90deg, rgba(255,255,255,0), white 65%, rgba(255,255,255,0.8) 95%, rgba(255,255,255,0));
+
+    box-shadow:
+        0 2px 6px -2px rgba(0,0,0,0.4),
+        inset 0 1px 1px 1px rgba(255,255,255,0.8);
+
+    text-align: center;
+
+    border-color: rgba(0,158,99,0.4);
+    background-color: #ceeee2;
 }
 
 /* buttons */
@@ -104,7 +127,8 @@ h3 {
 }
 h4 {
   font-size: 14.5px;
-  color:gray;
+  font-family: 'Open Sans', sans-serif;
+  color: #FF8C7A;
 }
 h5 {
   font-size: 11px;

@@ -1,7 +1,19 @@
 
 <% unless user_signed_in? %>
+<div class='row'>
+  <div class='span7'>
+    <h1>Welcome to OSO!</h1>
+    <h3>Track your flight status with ease.<br>
+Automatically view alternative flights <br>
+if yours is cancelled or delayed.</h3>
+</div>
+  <div class='span5' id='home_sign_up_in'>
+    <h2>Track My Flight</h2>
+    <h4>Sign up for free and create your itinerary within two minutes.</h4><br>
+    <%= link_to "Get started", new_user_registration_path, :class => 'btn btn-large btn-primary' %>
+  </div>
+  </div>
 
-  <h1>Welcome to OSO!</h1> <%= link_to "Create an itinerary", new_itinerary_path, :class => 'btn btn-primary' %>
 <% else %>
   <div id='existing_itineraries'>
     <h1>Itineraries</h1>
