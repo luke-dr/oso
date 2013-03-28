@@ -1,32 +1,32 @@
 <h2>
   <% if current_user.name && current_user.name.downcase =~ /[aeiou]/ %>
-    <%= "#{@user.name.titleize}'s Account Settings" %>
+  <%= "#{@user.name.titleize}'s Account Settings" %>
   <% else %>
-    <%= "Your Account Settings" %>
+  <%= "Your Account Settings" %>
   <% end %>
 </h2>
 
 <table class='table table-hover'>
-    <tbody>
-        <tr>
-            <td>email:</td>
-            <td>
-              <% if current_user.unconfirmed_email %>
-                  <%= current_user.unconfirmed_email %> <!-- need to indicate this is unconfirmed -->
-              <% else %>
-                  <%= current_user.email %>
-              <% end %>
-            </td>
-        </tr>
-        <tr>
-            <td>password:</td>
-            <td>********</td>
-        </tr>
-    </tbody>
+  <tbody>
+    <tr>
+      <td>email:</td>
+      <td>
+        <% if current_user.unconfirmed_email %>
+        <%= current_user.unconfirmed_email %> <!-- need to indicate this is unconfirmed -->
+        <% else %>
+        <%= current_user.email %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td>password:</td>
+      <td>********</td>
+    </tr>
+  </tbody>
 </table>
 
 <%= link_to "Edit My Account", edit_user_registration_path(current_user), :class => "btn btn-primary" %> <br>
 <%= link_to "Delete My Account", registration_path(current_user),
-                                :data => { :confirm => "Are you sure?" },
-                                :method => :delete,
-                                :class => 'btn btn-mini btn-danger' %>
+:data => { :confirm => "Are you sure?" },
+:method => :delete,
+:class => 'btn btn-mini btn-danger' %>

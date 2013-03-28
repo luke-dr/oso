@@ -46,9 +46,9 @@ class ItinerariesController < ApplicationController
         f.update_attribute(:status, "Available within 2 hours of flight.")
       end
       if !(f.status.to_s.downcase.include? "on-time") && !(f.status.to_s.downcase.include? "scheduled")
-      url = "http://flightaware.com/live/findflight/#{f.departure_airport}/#{f.arrival_airport}/"
-      doc = Nokogiri::HTML(open(url))
-      @alt_flights = doc.css('table#Results').to_s
+        url = "http://flightaware.com/live/findflight/#{f.departure_airport}/#{f.arrival_airport}/"
+        doc = Nokogiri::HTML(open(url))
+        @alt_flights = doc.css('table#Results').to_s
       end
 
     end
@@ -75,10 +75,10 @@ class ItinerariesController < ApplicationController
   end
 
   private
-    def find_itinerary
-      @itinerary = Itinerary.find(params[:id])
-      rescue ActiveRecord::RecordNotFound
-      flash[:alert] = "The itinerary you are looking for could not be found."
-      redirect_to itineraries_path
-    end
+  def find_itinerary
+    @itinerary = Itinerary.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    flash[:alert] = "The itinerary you are looking for could not be found."
+    redirect_to itineraries_path
+  end
 end

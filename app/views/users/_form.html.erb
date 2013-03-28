@@ -1,11 +1,11 @@
 <%= form_for(@user) do |f| %>
-  <%= f.error_messages %>
-    <br>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-    <br>
-  <%= f.label :email %>
-  <%= f.text_field :email %> *required
-    <br>
-  <%= f.submit "Submit" %>
+<%= f.error_messages %>
+<br>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<br>
+<%= f.label :email %>
+<%= f.text_field :email %> *required
+<br>
+<%= f.submit "Submit" %>
 <% end %>

@@ -10,11 +10,11 @@
     <th>Name</th><th>Type</th><th>Status</th><th>Owner</th>
   </tr>
   <% @stories.each do |s| %>
-    <% if s::current_state != "delivered" %>
-    <tr>
-      <td><a href='<%= s::url %>' target="_blank"><%= s::name %></a></td><td><%= s::story_type %></td><td><%= s::current_state %></td><td><%= s::requested_by %></td>
-    </tr>
-    <% end %>
+  <% if s::current_state != "delivered" %>
+  <tr>
+    <td><a href='<%= s::url %>' target="_blank"><%= s::name %></a></td><td><%= s::story_type %></td><td><%= s::current_state %></td><td><%= s::requested_by %></td>
+  </tr>
+  <% end %>
   <% end %>
 </table>
 

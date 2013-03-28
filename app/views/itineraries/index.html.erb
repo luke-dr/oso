@@ -4,24 +4,24 @@
   <div class='span7' id='welcome_msg'>
     <h1>Welcome to OSO!</h1>
     <h3>Track your flight status with ease.<br>
-Automatically view alternative flights <br>
-if yours is cancelled or delayed.</h3>
-</div>
-  <div class='span5' id='home_sign_up_in'>
-    <h2>Track My Flight</h2>
-    <h4>Sign up for free and create your itinerary within two minutes.</h4><br>
-    <%= link_to "Get started", new_user_registration_path, :class => 'btn btn-large btn-primary' %>
-  </div>
+      Automatically view alternative flights <br>
+      if yours is cancelled or delayed.</h3>
+    </div>
+    <div class='span5' id='home_sign_up_in'>
+      <h2>Track My Flight</h2>
+      <h4>Sign up for free and create your itinerary within two minutes.</h4><br>
+      <%= link_to "Get started", new_user_registration_path, :class => 'btn btn-large btn-primary' %>
+    </div>
   </div>
 
-<% else %>
+  <% else %>
 
   <div id='existing_itineraries'>
     <h1>Itineraries</h1>
 
-  <% if current_user.itineraries.count == 0 %>
+    <% if current_user.itineraries.count == 0 %>
     <h3>Nothing here!</h3>
-  <% else %>
+    <% else %>
     <table class='table table-hover'>
       <thead>
         <td> Itinerary Name </td>
@@ -38,10 +38,10 @@ if yours is cancelled or delayed.</h3>
       <% end %>
 
     </table>
-  <% end %>
+    <% end %>
 
     <br><%= link_to "Create an itinerary", new_itinerary_path, :class => 'btn btn-primary' %>
   </div>
 
-<% end %>
+  <% end %>
 

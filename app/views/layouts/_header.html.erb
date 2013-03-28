@@ -5,26 +5,26 @@
         <div class='span12'>
           <nav>
             <%= link_to "OSO", itineraries_path, id: "logo" %>
-              <ul class="nav pull-right">
+            <ul class="nav pull-right">
               <% if user_signed_in? %>
-                <li id='welcome_user'>
-                  Welcome
-  				      <% if current_user.name && current_user.name.downcase =~ /[aeiou]/ %>
-                  <%= current_user.name.titleize %>
+              <li id='welcome_user'>
+                Welcome
+                <% if current_user.name && current_user.name.downcase =~ /[aeiou]/ %>
+                <%= current_user.name.titleize %>
                 <% else %>
-                  <%= current_user.email %>
+                <%= current_user.email %>
                 <% end %>
-				        </li>
+              </li>
               <% end %>
               <% if user_signed_in? %>
-                <li><%= link_to "Itineraries", itineraries_path %></li>
-                <li><%= link_to "My Account", account_path %></li>
-                <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+              <li><%= link_to "Itineraries", itineraries_path %></li>
+              <li><%= link_to "My Account", account_path %></li>
+              <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
               <% else %>
-                <li><%= link_to "Sign in", new_user_session_path %></li>
-                <li><%= link_to "Sign up", new_user_registration_path %></li>
+              <li><%= link_to "Sign in", new_user_session_path %></li>
+              <li><%= link_to "Sign up", new_user_registration_path %></li>
               <% end %>
-              </ul>
+            </ul>
           </nav>
         </div>
       </div>

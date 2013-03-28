@@ -8,9 +8,9 @@
   <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
   <title>
     <% if content_for?(:title) %>
-      <%= yield(:title) %>
+    <%= yield(:title) %>
     <% else %>
-      OSO
+    OSO
     <% end %>
   </title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
@@ -26,15 +26,15 @@
   <%= render 'layouts/header' %>
 
   <div class='container'>
-      <div class='row'>
+    <div class='row'>
       <div class='span12 main'>
 
 
         <%= render 'layouts/messages' %>
         <%= yield %>
+      </div>
+    </div>
   </div>
-</div>
-</div>
 </div>
 </body>
 </html>
