@@ -13,7 +13,7 @@ feature "Editing Itineraries - " do
     sign_in_as!(user)
     visit '/'
     click_link itinerary.name
-    click_link "Edit Itinerary"
+    click_link "Rename Itinerary"
   end
 
   scenario "Updating an itinerary" do

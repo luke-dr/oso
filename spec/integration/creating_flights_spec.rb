@@ -10,7 +10,7 @@ feature "Creating flights" do
     sign_in_as!(user)
     visit "/"
     click_link itinerary.name
-    click_link "Add a flight"
+    click_link "Add a Flight"
   end
 
   scenario "User can add a flight to an existing itinerary" do

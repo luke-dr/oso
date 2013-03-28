@@ -71,7 +71,7 @@ body {
     background-color: #ceeee2;
 }
 
-/* buttons */
+/* form items */
 
 .btn-primary {
   color: #ffffff;
@@ -109,6 +109,11 @@ body {
   color: #ffffff;
   background-color: #fb7178;
   *background-color: #003bb3;
+}
+
+select {
+  height: 23px;
+  width: 107px;
 }
 
 /* typography */

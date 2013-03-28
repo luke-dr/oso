@@ -10,9 +10,10 @@ feature "Editing airlines" do
     sign_in_as!(user)
     visit "/"
     click_link itinerary.name
-    within (".flight_id_#{flight_1.id}") do
-      click_link "Edit flight"
+    within(".flight_#{flight_1.id.to_s}_details") do
+      click_link "Details and Alternatives"
     end
+    click_link "Edit flight"
   end
 
   scenario "User can change their flight details" do
