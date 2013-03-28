@@ -19,7 +19,7 @@
             <tr>
                 <td><%= flight.airline_code %></td>
                 <td><%= flight.flight_number %></td>
-                <td><%= flight.scheduled_departure_time %></td>
+                <td><%= flight.scheduled_departure_time.strftime("%b %-d %Y") %></td>
                 <td><%= flight.departure_airport %></td>
                 <td><%= flight.arrival_airport %></td>
                 <td><%= flight.status %></td>

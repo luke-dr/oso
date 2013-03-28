@@ -16,13 +16,18 @@ feature "Creating flights" do
   scenario "User can add a flight to an existing itinerary" do
     fill_in "Airline code", :with => flight_2.airline_code
     fill_in "Flight number", :with => flight_2.flight_number
-    fill_in "Flight date", :with => flight_2.scheduled_departure_time
+
+    select  '2015', :from =>'flight_scheduled_departure_time_1i'
+    select  'March', :from =>'flight_scheduled_departure_time_2i'
+    select  '27', :from =>'flight_scheduled_departure_time_3i'
+
     fill_in "Departure airport", :with => flight_2.departure_airport
     fill_in "Arrival airport", :with => flight_2.arrival_airport
 
     click_button "Create Flight"
 
     page.current_path.should == itinerary_path(itinerary)
+    page.should have_content ("Mar 27 2015")
     page.should have_content flight_1.departure_airport
     page.should have_content flight_2.departure_airport
   end
