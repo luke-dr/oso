@@ -37,7 +37,7 @@ class FlightsController < ApplicationController
       url = "http://flightaware.com/live/findflight/#{@flight.departure_airport}/#{@flight.arrival_airport}/"
       doc = Nokogiri::HTML(open(url))
 
-      @alt_flights = doc.css('table#Results').to_s
+      @alt_flights = doc.css('table#Results').to_s.gsub("th", "th style='text-align: left'").gsub("table", "table width='100%'")
     end
   end
 
