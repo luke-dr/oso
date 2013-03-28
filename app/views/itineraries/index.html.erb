@@ -15,23 +15,33 @@ if yours is cancelled or delayed.</h3>
   </div>
 
 <% else %>
+
   <div id='existing_itineraries'>
     <h1>Itineraries</h1>
-  <table class='table table-hover'>
-    <thead>
-      <td> Itinerary Name </td>
-      <td> Creation Date </td>
-      <td> Departure Date </td>
-    </thead>
 
-    <% @itineraries.each do |itinerary| %>
+  <% if current_user.itineraries.count == 0 %>
+    <h3>Nothing here!</h3>
+  <% else %>
+    <table class='table table-hover'>
+      <thead>
+        <td> Itinerary Name </td>
+        <td> Creation Date </td>
+        <td> Departure Date </td>
+      </thead>
+
+      <% @itineraries.each do |itinerary| %>
       <tr>
         <td>&#9992; <%= link_to itinerary.name, itinerary %></td>
         <td><%= itinerary.created_at.strftime("%b %-d %Y") %></td>
         <td><%= itinerary.flights.first.scheduled_departure_time.strftime("%b %-d %Y") %></td>
       </tr>
-    <% end %>
-  </table>
-  <br><%= link_to "Create an itinerary", new_itinerary_path, :class => 'btn btn-primary' %>
+      <% end %>
+
+    </table>
+  <% end %>
+
+    <br><%= link_to "Create an itinerary", new_itinerary_path, :class => 'btn btn-primary' %>
+  </div>
+
 <% end %>
-</div>
+
