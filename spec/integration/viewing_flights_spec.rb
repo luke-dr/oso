@@ -10,7 +10,7 @@ feature "Creating flights" do
     visit "/"
     click_link itinerary.name
     within (".flight_id_#{flight_1.id}") do
-      click_link "View Details and Alternatives"
+      click_link "Details and Alternatives"
     end
   end
 

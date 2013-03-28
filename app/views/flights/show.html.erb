@@ -1,3 +1,7 @@
+<br>
+<%= link_to "< Return to Itinerary", :back %>
+<h1><%= @itinerary.name %></h1>
+<h3> Flight Status</h3>
 <table class='table table-hover' id="itinerary_details">
     <thead>
       <th>Airline Code</th><th>Flight Number</th>
@@ -13,13 +17,9 @@
       <td><%= @flight.arrival_airport %></td>
       <td><%= @flight.status %></td>
     </tr>
-      <tr>
-        <td class="flight_id_<%= @flight.id.to_s %>" colspan="6">
-                <%= link_to "Back", :back, :class => "btn btn-mini btn-primary" %>&nbsp;
-        </td>
-      </tr>
   </tbody>
 </table>
+
 
 <div class='row'>
   <div class='span12' id='flights'>
