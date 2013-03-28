@@ -9,8 +9,4 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :unconfirmed_email
 
   has_many :itineraries
-
-  validates :email, :presence => true,
-            :uniqueness => true
-  validates_confirmation_of :password, :message => "Your password doesn't match!"
 end
